@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .gradient {
+    /* @apply bg-gradient-to-r from-secondary-500 to-primary-600; */
+    @apply bg-gradient-to-r from-tertiary-700 via-primary-600 to-secondary-500;
+
+    /* background: hsla(45, 100%, 55%, 1); */
+
+    /* background: linear-gradient(
+      45deg,
+      hsla(48, 100%, 65%, 1) 0%,
+      hsla(45, 100%, 55%, 1) 17%,
+      hsla(18, 100%, 61%, 1) 59%,
+      hsla(12, 94%, 47%, 1) 100%
+    ); */
+  }
+
+  
+
+  .text-gradient {
+    @apply gradient text-transparent bg-clip-text;
+    line-height: 1.2 !important;
+    background-size: 150% auto;
+
+    animation: shine 5s ease-in-out infinite alternate;
+  }
+
+}
+.shadow-gradient {
+  position: relative;
+  z-index: 1;
+}
+
+.shadow-gradient::before {
+  @apply gradient;
+  content: "";
+  position: absolute;
+  left: 50%;
+
+  top: 0;
+  transform: translate(-50%);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  filter: blur(50px);
+  opacity: 0.35;
+}
+
+.text-
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
