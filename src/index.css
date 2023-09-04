@@ -4,34 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
   .gradient {
-    /* @apply bg-gradient-to-r from-secondary-500 to-primary-600; */
     @apply bg-gradient-to-r from-tertiary-700 via-primary-600 to-secondary-500;
-
-    /* background: hsla(45, 100%, 55%, 1); */
-
-    /* background: linear-gradient(
-      45deg,
-      hsla(48, 100%, 65%, 1) 0%,
-      hsla(45, 100%, 55%, 1) 17%,
-      hsla(18, 100%, 61%, 1) 59%,
-      hsla(12, 94%, 47%, 1) 100%
-    ); */
   }
-
-  
 
   .text-gradient {
-    @apply gradient text-transparent bg-clip-text;
-    line-height: 1.2 !important;
-    background-size: 150% auto;
-
-    animation: shine 5s ease-in-out infinite alternate;
+    @apply text-transparent bg-clip-text;
   }
-
 }
+
+.text-gradient-color {
+  @apply gradient text-gradient;
+  line-height: 1.2 !important;
+  background-size: 150% auto;
+
+  animation: shine 5s ease-in-out infinite alternate;
+}
+
+.text-welcome {
+  @apply text-gradient;
+  text-shadow: 1px 1px 7.5px rgba(255, 255, 255, 0.9);
+  background-color: #cccc;
+  z-index: -1;
+}
+
 .shadow-gradient {
   position: relative;
   z-index: 1;
@@ -49,10 +46,8 @@
   width: 100%;
   z-index: -1;
   filter: blur(50px);
-  opacity: 0.35;
+  opacity: 0.3;
 }
-
-.text-
 
 @keyframes shine {
   0% {
@@ -61,4 +56,14 @@
   100% {
     background-position: 100% 50%;
   }
+}
+
+.moc {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.4px);
+  -webkit-backdrop-filter: blur(6.4px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
