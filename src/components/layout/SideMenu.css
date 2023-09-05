@@ -1,3 +1,5 @@
+/* FIXME - No tiene transicion cuando se cierra */
+
 .link {
   @apply relative text-2xl font-bold w-full text-normal-black dark:text-normal-white  hover:text-primary-400;
 
@@ -62,23 +64,19 @@
 
     justify-content: center;
     text-align: center;
-
-    /* transition: ease-in-out 0.3s; */
   }
 
   &.closed {
     @apply md:right-5 top-1/2 -translate-y-1/2;
     text-align: right;
+
+    animation: fade-out 0.3s ease-in-out;
   }
 }
 
-@keyframes closing {
-  0% {
-    top: 0px;
-    right: 0px;
-  }
-  100% {
-    right: 5px;
-    top: 50%;
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    display: none;
   }
 }
