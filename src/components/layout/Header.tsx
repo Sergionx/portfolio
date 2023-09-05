@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import spainFlag from "../assets/es.svg";
-import usaFlag from "../assets/us.svg";
+import spainFlag from "../../assets/es.svg";
+import usaFlag from "../../assets/us.svg";
 
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
-import Switch from "./Switch";
+import Switch from "../Switch";
 
 export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -27,7 +27,7 @@ export default function Header() {
   return (
     // REVIEW - Considerar hacerlo sticky
     <header
-      className="absolute top-0 right-[20px] z-50 px-6 py-4
+      className="fixed top-0 right-[20px] z-50 px-6 py-4
         bg-normal-white/60 dark:bg-normal-white/30 backdrop-blur
         rounded-b-2xl border-2 border-[#d8d8d8] dark:border-white/20 border-t-0
         flex gap-4 justify-between 
