@@ -27,10 +27,10 @@ export default function Header() {
   return (
     // REVIEW - Considerar hacerlo sticky
     <header
-      className="fixed top-0 right-[20px] z-50 px-6 py-4
-        bg-normal-white/60 dark:bg-normal-white/30 backdrop-blur
-        rounded-b-2xl border-2 border-[#d8d8d8] dark:border-white/20 border-t-0
-        flex gap-4 justify-between 
+      className="fixed flex gap-4 justify-between z-50 px-6 py-4 glass hover:glass-lg
+        border-2 border-[#d8d8d8] dark:border-white/20 xs:border-t-0 xs:rounded-b-2xl
+        transition-all rounded-l-2xl xs:rounded-t-none right-0 max-xs:top-20 top-0
+        xs:right-[20px] flex-col xs:flex-row 
     "
     >
       <section className="flex gap-2 items-center">
@@ -48,7 +48,7 @@ export default function Header() {
 
       <div
         id="separator"
-        className="border border-tertiary-400 dark:border-tertiary-950 h-[25px]"
+        className="border border-tertiary-400 dark:border-tertiary-950 h-[25px] max-xs:hidden"
       ></div>
 
       <section className="flex gap-2 items-center text-tertiary-400 dark:text-tertiary-950">

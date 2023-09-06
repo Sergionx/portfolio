@@ -27,9 +27,8 @@ export default function Hero() {
       <footer
         className="flex flex-col sm:flex-row items-center 
           max-h-[20rem] sm:max-h-16 max-w-[200px] sm:max-w-[500px] mx-auto 
-          rounded-xl p-2 gap-4 mt-8 shadow-sm transition-all duration-500
-          backdrop-blur bg-normal-white/60 dark:bg-normal-white/20 border-2 border-white/20
-          hover:bg-normal-white/70 hover:shadow-md dark:hover:bg-normal-white/30"
+          rounded-xl p-2 gap-4 mt-8 shadow-sm 
+          glass-sm hover:glass-lg"
       >
         <a
           className="cursor-pointer hover:text-primary-400 dark:hover:text-primary-700 
