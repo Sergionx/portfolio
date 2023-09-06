@@ -28,9 +28,8 @@ export default function Header() {
     // REVIEW - Considerar hacerlo sticky
     <header
       className="fixed flex gap-4 justify-between z-50 px-6 py-4 glass hover:glass-lg
-        border-2 border-[#d8d8d8] dark:border-white/20 xs:border-t-0 xs:rounded-b-2xl
-        transition-all rounded-l-2xl xs:rounded-t-none right-0 max-xs:top-20 top-0
-        xs:right-[20px] flex-col xs:flex-row 
+        xs:!border-t-0 xs:rounded-b-2xl  rounded-l-2xl xs:rounded-t-none transition-all
+        right-0 max-xs:top-20 top-0 xs:right-[20px] flex-col xs:flex-row 
     "
     >
       <section className="flex gap-2 items-center">
