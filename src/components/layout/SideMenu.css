@@ -1,4 +1,5 @@
 /* FIXME - No tiene transicion cuando se cierra */
+/* REVIEW - Ver si uso gradient oclor cuando esta activo  */
 
 .link {
   @apply relative text-2xl font-bold w-full text-normal-black dark:text-normal-white  hover:text-primary-400;
@@ -67,7 +68,7 @@
   }
 
   &.closed {
-    @apply md:right-5 top-1/2 -translate-y-1/2;
+    @apply md:right-5 top-1/2 -translate-y-1/2 max-md:invisible;
     text-align: right;
 
     animation: fade-out 0.3s ease-in-out;
