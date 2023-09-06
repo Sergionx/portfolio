@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SideMenu.css";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Header from "./Header";
@@ -7,7 +7,25 @@ export default function SideMenu() {
   const [activeLink, setActiveLink] = useState(5);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const links = ["Home", "Projects", "About", "Contact"];
+  useEffect(() => {
+    function handleClickOutside(event: any) {
+      if (event.target!.id !== "menu") {
+        setIsMenuOpen(false);
+      }
+    }
+
+    if (isMenuOpen) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  const links = ["Home", "Projects", "Experience", "About"];
 
   // REVIEW - Hover gradient
   const anchorLinks = links.map((link, index) => (
@@ -32,10 +50,13 @@ export default function SideMenu() {
         className="fixed left-4 top-4 rounded-lg md:hidden z-[1000] p-1 
           text-normal-black dark:text-normal-white
         "
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        onClick={() => {
+          setIsMenuOpen(!isMenuOpen);
+        }}
       >
         <AiOutlineMenu
           size={28}
+          id="menu"
           className={`${isMenuOpen ? "hidden" : "block"}`}
         />
         <AiOutlineClose
