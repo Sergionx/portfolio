@@ -4,9 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  h2 {
+    @apply text-4xl mb-4 font-bold text-center;
+  }
+}
+
 @layer utilities {
   .gradient {
     @apply bg-gradient-to-r from-tertiary-700 via-primary-600 to-secondary-500;
+    @apply dark:from-tertiary-500 dark:via-primary-500 dark:to-secondary-400;
   }
 
   .text-gradient {
