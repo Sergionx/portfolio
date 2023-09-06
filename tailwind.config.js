@@ -4,6 +4,21 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      screens: {
+        xs: "480px",
+      },
+      keyframes: {
+        shake: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "10%, 30%, 50%, 70%, 90%": {
+            transform: "translateX(-5px) rotate(-10deg)",
+          },
+          "20%, 40%, 60%, 80%": { transform: "translateX(5px) rotate(10deg)" },
+        },
+      },
+      animation: {
+        shake: "shake 1s ease-in-out",
+      },
       colors: {
         primary: {
           50: "#fef2f2",
