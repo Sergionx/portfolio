@@ -2,7 +2,7 @@ import About from "./components/sections/About";
 import Experience from "./components/sections/Experience";
 import Hero from "./components/sections/Hero";
 import Projects from "./components/sections/Projects";
-import 'react-tooltip/dist/react-tooltip.css'
+import "react-tooltip/dist/react-tooltip.css";
 
 function App() {
   return (
@@ -12,19 +12,19 @@ function App() {
       "
       // transition-colors duration-500
     >
-      <section className="p-5 max-w-3xl flex items-center  pt-64" id="Home">
+      <section id="Home" className="p-5 max-w-3xl flex items-center pt-64">
         <Hero />
       </section>
 
-      <section className="flex flex-col items-center pt-64"  id="Projects">
+      <section id="Projects" className="flex flex-col items-center pt-32">
         <Projects />
       </section>
 
-      <section className="flex flex-col items-center pt-64"  id="Experience">
+      <section id="Experience" className="flex flex-col items-center pt-48">
         <Experience />
       </section>
 
-      <section id="About" className="flex flex-col pt-64">
+      <section id="About" className="flex flex-col pt-32 pb-72">
         <About />
       </section>
     </main>
