@@ -1,5 +1,5 @@
 /* FIXME - No tiene transicion cuando se cierra */
-/* REVIEW - Ver si uso gradient oclor cuando esta activo  */
+@import "../../index.css";
 
 .link {
   @apply relative text-2xl font-bold w-full text-normal-black dark:text-normal-white  hover:text-primary-400;
@@ -8,7 +8,6 @@
   opacity: 0.75;
 
   &:hover {
-    @apply text-primary-700 dark:text-primary-300;
     transform: scale(1.1);
 
     &.closed {
@@ -34,12 +33,12 @@
   }
 
   &.active {
-    @apply text-primary-800 dark:text-primary-400;
+    @apply text-gradient-color;
     transform: scale(1.25);
     opacity: 1;
 
     &.closed {
-      transform: translateX(-100px);
+      transform: translateX(-100px) scale(1.25);
     }
 
     &:after {
