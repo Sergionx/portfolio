@@ -1,5 +1,3 @@
-import React from "react";
-
 interface Props {
   onCheck: (checked: boolean) => void;
   value: boolean;

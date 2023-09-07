@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import spainFlag from "../../assets/es.svg";
 import usaFlag from "../../assets/us.svg";
 
