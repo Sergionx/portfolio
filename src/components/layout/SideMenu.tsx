@@ -31,7 +31,7 @@ export default function SideMenu() {
     { name: "Home", offset: 0 },
     { name: "Projects", offset: 0 },
     { name: "Experience", offset:0 },
-    { name: "About", offset: 0 },
+    { name: "About", offset: -600 },
   ];
 
   // REVIEW - Hover gradient
