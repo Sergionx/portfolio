@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
-import "./SideMenu.css";
+import { useEffect, useState } from "react";
+import { Link } from "react-scroll";
+
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Header from "./Header";
+import "./SideMenu.css";
 
 export default function SideMenu() {
   const [activeLink, setActiveLink] = useState(5);
@@ -25,7 +27,12 @@ export default function SideMenu() {
     };
   }, [isMenuOpen]);
 
-  const links = ["Home", "Projects", "Experience", "About"];
+  const links = [
+    { name: "Home", offset: 0 },
+    { name: "Projects", offset: 0 },
+    { name: "Experience", offset:0 },
+    { name: "About", offset: 0 },
+  ];
 
   // REVIEW - Hover gradient
   const anchorLinks = links.map((link, index) => (
@@ -34,11 +41,18 @@ export default function SideMenu() {
         isMenuOpen ? "open" : "closed"
       }`}
       key={index}
-      onClick={() => setActiveLink(index)}
     >
-      <a href={`#${link}`} className="w-8">
-        {link}
-      </a>
+      <Link
+        spy={true}
+        to={link.name}
+        activeClass="active"
+        onSetActive={() => setActiveLink(index)}
+        offset={link.offset}
+        onClick={() => setIsMenuOpen(false)}
+        className="cursor-pointer"
+      >
+        {link.name}
+      </Link>
     </li>
   ));
 
@@ -47,6 +61,7 @@ export default function SideMenu() {
       <Header />
 
       <button
+        id="menu"
         className="fixed left-4 top-4 rounded-lg md:hidden z-[1000] p-1 
           text-normal-black dark:text-normal-white
         "
