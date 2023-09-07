@@ -19,7 +19,6 @@ export default function Header() {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
     } else {
-      console.log("hola");
       document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
@@ -32,7 +31,8 @@ export default function Header() {
         right-0 max-xs:top-20 top-0 xs:right-[20px] flex-col xs:flex-row 
     "
     >
-      <section className="flex gap-2 items-center">
+      {/* TODO - Add para cambiar idioma */}
+      {/* <section className="flex gap-2 items-center">
         <img src={spainFlag} alt="Spain flag" className="w-6 h-6" />
 
         <Switch
@@ -43,14 +43,14 @@ export default function Header() {
         />
 
         <img src={usaFlag} alt="USA flag" className="w-6 h-6" />
-      </section>
+      </section> */}
 
-      <div
+      {/* <div
         id="separator"
         className="border border-tertiary-400 dark:border-tertiary-950 h-[25px] max-xs:hidden"
-      ></div>
+      ></div> */}
 
-      <section className="flex gap-2 items-center text-tertiary-400 dark:text-tertiary-950">
+      <section className="flex gap-2 items-center text-tertiary-800 dark:text-tertiary-300">
         <BsFillSunFill alt="Sun" size={24} />
 
         <Switch
