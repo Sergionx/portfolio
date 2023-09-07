@@ -1,0 +1,82 @@
+/* FIXME - No tiene transicion cuando se cierra */
+@import "../../index.css";
+
+.link {
+  @apply relative text-2xl font-bold w-full text-normal-black dark:text-normal-white  hover:text-primary-400;
+
+  transition: ease-in-out 0.3s;
+  opacity: 0.75;
+
+  &:hover {
+    transform: scale(1.1);
+
+    &.closed {
+      transform: translateX(-50px) scale(1.1);
+    }
+    opacity: 0.9;
+  }
+
+  &.closed {
+    transform: translateX(-40px);
+
+    &:after {
+      @apply absolute bg-secondary-400 top-1/2 right-0;
+      content: "";
+      transition: ease-in-out 0.3s;
+      transform: translate(220px, -50%);
+      height: 3px;
+      width: 200px;
+
+      top: 50%;
+      right: 0px;
+    }
+  }
+
+  &.active {
+    @apply text-gradient-color;
+    transform: scale(1.25);
+    opacity: 1;
+
+    &.closed {
+      transform: translateX(-100px) scale(1.25);
+    }
+
+    &:after {
+      @apply bg-gradient-to-r from-primary-500 to-primary-600;
+    }
+  }
+}
+
+.menu {
+  @apply opacity-0 md:opacity-100 w-screen right-0 md:w-auto;
+  position: fixed;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  z-index: 999;
+
+  transition: opacity 0.5s ease-in-out;
+
+  &.open {
+    @apply h-screen  backdrop-blur-xl opacity-100;
+
+    justify-content: center;
+    text-align: center;
+  }
+
+  &.closed {
+    @apply md:right-5 top-1/2 -translate-y-1/2 max-md:invisible;
+    text-align: right;
+
+    animation: fade-out 0.3s ease-in-out;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    display: none;
+  }
+}

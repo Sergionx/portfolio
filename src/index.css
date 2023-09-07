@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  h2 {
+    /* REVIEW - Considerar poenr gradiente */
+    @apply text-4xl mb-4 font-bold text-center;
+  }
+}
+
+@layer utilities {
+  .gradient {
+    @apply bg-gradient-to-r from-tertiary-700 via-primary-600 to-secondary-500;
+    @apply dark:from-tertiary-500 dark:via-primary-500 dark:to-secondary-400;
+  }
+
+  .text-gradient {
+    @apply text-transparent bg-clip-text;
+  }
+
+  .glass {
+    @apply bg-normal-white/60 dark:bg-normal-white/20 border-2 border-[#d8d8d8] dark:border-white/20 transition-colors duration-500
+      backdrop-blur;
+  }
+
+  .glass-sm {
+    @apply glass bg-normal-white/60 dark:bg-normal-white/20;
+  }
+
+  .glass-lg {
+    @apply glass bg-normal-white/70  hover:bg-normal-white/30 backdrop-blur-lg;
+  }
+}
+
+.text-gradient-color {
+  @apply gradient text-gradient;
+  line-height: 1.2 !important;
+  background-size: 150% auto;
+
+  animation: shine 5s ease-in-out infinite alternate;
+}
+
+.text-welcome {
+  @apply text-gradient;
+  text-shadow: 1px 1px 7.5px rgba(255, 255, 255, 0.9);
+  background-color: #cccc;
+  z-index: -1;
+}
+
+.shadow-gradient {
+  position: relative;
+  z-index: 1;
+}
+
+.shadow-gradient::before {
+  @apply gradient;
+  content: "";
+  position: absolute;
+  left: 50%;
+
+  top: 0;
+  transform: translate(-50%);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  filter: blur(50px);
+  opacity: 0.3;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.moc {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.4px);
+  -webkit-backdrop-filter: blur(6.4px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
