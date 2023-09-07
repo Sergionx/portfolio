@@ -42,7 +42,7 @@
     }
 
     &:after {
-      @apply text-primary-800 dark:text-primary-400;
+      @apply bg-gradient-to-r from-primary-500 to-primary-600;
     }
   }
 }
