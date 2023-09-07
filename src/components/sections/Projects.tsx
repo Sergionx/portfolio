@@ -13,13 +13,18 @@ interface Project {
 }
 
 export default function Projects() {
+  // TODO PRIORIDAD - Filtros de proyectos
+  // TODO PRIORIDAD - Pagination de proyectos
+  // TODO - Add psicovivir
+  // TODO - Add Yummy
+
   const projects: Project[] = [
     {
       name: "ChatGPT implementation",
       description:
         "Integrated ChatGPT API on a web based chat system, using React, Tailwind and Firebase as a backend.",
       technologies: ["React", "TypeScript", "TailwindCSS", "Firebase", "Vite"],
-      date: "2021-09-01",
+      date: "April 2023 - May 2023",
     },
     {
       name: "Ticket Management System",
@@ -34,14 +39,14 @@ export default function Projects() {
         "PrimeNG",
         "RxJS",
       ],
-      date: "todo",
+      date: "September 2022 - April 2023",
     },
     {
       name: "ERP System",
       description:
         "Tasked with refactoring several views and maintaining to separate modules within the whole ecosystem.",
       technologies: ["Angular", "TypeScript", "SASS", "Firebase", "RxJS"],
-      date: "todo",
+      date: "May 2023 - August 2023",
     },
     {
       name: "Wova",
@@ -50,7 +55,7 @@ export default function Projects() {
       technologies: ["React", "TypeScript", "TailwindCSS", "Firebase", "Vite"],
       url: "https://wova-87e6e.web.app/",
       githubUrl: "https://github.com/ValeriaZampetti/wova-studio/tree/main",
-      date: "todo",
+      date: "April 2023 - Jul 2023",
     },
   ];
 
@@ -97,9 +102,9 @@ export default function Projects() {
           />
         </a>
 
-        <span className="text-normal-black/80 dark:text-normal-white/70 mt-2">
+        <time className="text-normal-black/80 dark:text-normal-white/70 mt-2">
           {project.date}
-        </span>
+        </time>
 
         <p className="font-medium mt-4 break-words w-full ">
           {project.description}
@@ -144,12 +149,13 @@ export default function Projects() {
     <>
       <h2>Projects</h2>
 
-      <p className="text-lg max-w-prose text">
+      <p className="text-lg max-w-prose text mt-2">
         Here are some of the projects I've worked on recently. Keep In mind that
         some projects are not public for compoany security reasons. I'm always
         working on something new, so check back soon for updates!
       </p>
-      <div className="flex flex-wrap gap-6 justify-center mt-4">
+
+      <div className="flex flex-wrap gap-6 justify-center mt-6">
         {projectsCard}
       </div>
     </>
