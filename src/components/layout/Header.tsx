@@ -26,9 +26,9 @@ export default function Header() {
   return (
     // REVIEW - Considerar hacerlo sticky
     <header
-      className="fixed flex gap-4 justify-between z-50 px-6 py-4 glass hover:glass-lg
+      className="absolute md:fixed flex gap-4 justify-between z-50 px-6 py-4 glass hover:glass-lg
         xs:!border-t-0 xs:rounded-b-2xl  rounded-l-2xl xs:rounded-t-none transition-all
-        right-0 max-xs:top-20 top-0 xs:right-[20px] flex-col xs:flex-row 
+        right-0 max-xs:top-10 top-0 xs:right-[20px] flex-col xs:flex-row 
     "
     >
       {/* TODO - Add para cambiar idioma */}
