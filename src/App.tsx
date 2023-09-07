@@ -11,7 +11,7 @@ function App() {
       dark:text-normal-white text-normal-black bg-normal-white dark:bg-normal-black"
       // transition-colors duration-500
     >
-      <section id="Home" className="p-5 max-w-3xl flex items-center pt-64">
+      <section id="Home" className="p-5 max-w-3xl flex items-center pt-32 md:pt-64">
         <Hero />
       </section>
 
