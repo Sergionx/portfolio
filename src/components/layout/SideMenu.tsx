@@ -11,7 +11,7 @@ export default function SideMenu() {
 
   useEffect(() => {
     function handleClickOutside(event: any) {
-      if (event.target!.id !== "menu") {
+      if (!event.target!.closest(".menu-button") ) {
         setIsMenuOpen(false);
       }
     }
@@ -61,9 +61,8 @@ export default function SideMenu() {
       <Header />
 
       <button
-        id="menu"
         className="fixed left-4 top-4 rounded-lg md:hidden z-[1000] p-1 
-          text-normal-black dark:text-normal-white
+          text-normal-black dark:text-normal-white menu-button
         "
         onClick={() => {
           setIsMenuOpen(!isMenuOpen);
