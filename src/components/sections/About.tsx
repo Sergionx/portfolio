@@ -13,7 +13,7 @@ export default function About() {
       </p>
 
       <p className="text-lg font-medium  max-w-prose  mt-4 ">
-        The past year I delivery at my past company web applications using
+        The past year I deliver at my past company web applications using
         principally React and Angular, and backend services using Firebase.
         <span className="font-bold text-gradient-color">
           {" "}
