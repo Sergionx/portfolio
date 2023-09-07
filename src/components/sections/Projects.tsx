@@ -70,7 +70,7 @@ export default function Projects() {
       />
 
       <article
-        className="bg-gradient-to-br from-tertiary-300 to-tertiary-100 
+        className="bg-gradient-to-tl from-tertiary-300 to-tertiary-100 
         dark:from-tertiary-900 dark:to-tertiary-700
         transition-all duration-300
       hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
