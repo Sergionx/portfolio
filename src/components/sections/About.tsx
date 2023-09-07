@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <>
-      <h2>About</h2>
+      <h2>About Me</h2>
 
       <p className="text-lg font-medium max-w-prose ">
         Since 2020 I began my journey as a software engineer, at the present I
@@ -17,6 +17,11 @@ export default function About() {
       <p className="text-lg font-medium  max-w-prose  mt-4 ">
         The past year I delivery at my past company web applications using
         principally React and Angular, and backend services using Firebase.
+        <span className="font-bold text-gradient-color">
+          {" "}
+          Improving the workflow and the delivery time
+        </span>{" "}
+        of my team.
       </p>
 
       <p className="text-lg font-medium  max-w-prose  mt-4 ">
