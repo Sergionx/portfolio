@@ -10,7 +10,7 @@ export default function Hero() {
     <div className="shadow-gradient">
       <header className="text-center font-bold relative">
         {/* <h1 className="text-8xl mt-2 text-welcome">Welcome</h1> */}
-        <h2 className="font-bold text-5xl sm:text-8xl text-gradient-color ">
+        <h2 className="font-bold text-6xl sm:text-8xl text-gradient-color">
           Hi, I'm Sergionx
         </h2>
       </header>
@@ -30,8 +30,7 @@ export default function Hero() {
           glass-sm hover:glass-lg"
       >
         <a
-          className="cursor-pointer hover:text-primary-400 dark:hover:text-primary-700 
-            "
+          className="cursor-pointer hover:text-primary-400 dark:hover:text-primary-700"
           href="https://github.com/Sergionx"
           target="_blank"
           rel="noreferrer"
@@ -61,7 +60,7 @@ export default function Hero() {
           className="sm:ml-auto cursor-pointer bg-primary-400 dark:bg-primary-700 rounded-lg
             text-normal-white font-medium 
             flex items-center gap-2 h-12 p-4"
-          href="https://drive.google.com/file/d/1bP-eLD27dYhlo6CwgDqFJA4lPOCDR7XB/view?usp=sharing"
+          href="https://drive.google.com/file/d/1cGySz_gzeF8RiSZucsZBeec2lcLmWfTv/view?usp=drive_link"
           target="_blank"
           rel="noreferrer"
         >
