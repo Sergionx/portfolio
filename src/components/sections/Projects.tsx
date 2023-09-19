@@ -15,9 +15,7 @@ interface Project {
 export default function Projects() {
   // TODO PRIORIDAD - Filtros de proyectos
   // TODO PRIORIDAD - Pagination de proyectos
-  // TODO - Add psicovivir
-  // TODO - Add Yummy
-
+  
   const projects: Project[] = [
     {
       name: "ChatGPT implementation",
@@ -65,6 +63,16 @@ export default function Projects() {
       url: "https://psico-vivir.web.app/",
       githubUrl: "https://github.com/ValeriaZampetti/Psico-vivir",
       date: "January 2023 - March 2023",
+    },
+    {
+      name: "Yummy Travel",
+      description: `
+        Developed a MVP in 24 hours for a hackathon. The app is a inter-urban travel planner that allows you to create a trip, add places to visit and share it with your friends.
+      `,
+      technologies: ["React", "TypeScript", "TailwindCSS", "Flowbite", "Vite"],
+      url: "https://yummy-travel.web.app/",
+      githubUrl: "https://github.com/Yummy-Travel/Yummy-Travel",
+      date: "August  2023 - August  2023",
     },
   ];
 
