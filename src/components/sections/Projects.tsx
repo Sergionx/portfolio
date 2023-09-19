@@ -15,7 +15,7 @@ interface Project {
 export default function Projects() {
   // TODO PRIORIDAD - Filtros de proyectos
   // TODO PRIORIDAD - Pagination de proyectos
-  
+
   const projects: Project[] = [
     {
       name: "ChatGPT implementation",
@@ -174,7 +174,7 @@ export default function Projects() {
         working on something new, so check back soon for updates!
       </p>
 
-      <div className="flex flex-wrap gap-6 justify-center mt-6">
+      <div className="flex flex-wrap gap-6 justify-center mt-6 max-w-[140rem]">
         {projectsCard}
       </div>
     </>
