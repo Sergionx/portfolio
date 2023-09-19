@@ -10,7 +10,7 @@ export default function Hero() {
     <div className="shadow-gradient">
       <header className="text-center font-bold relative">
         {/* <h1 className="text-8xl mt-2 text-welcome">Welcome</h1> */}
-        <h2 className="font-bold text-6xl sm:text-8xl text-gradient-color">
+        <h2 className="font-bold text-4xl min-[300px]:text-6xl sm:text-8xl text-gradient-color">
           Hi, I'm Sergionx
         </h2>
       </header>
