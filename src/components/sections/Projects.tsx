@@ -57,6 +57,15 @@ export default function Projects() {
       githubUrl: "https://github.com/ValeriaZampetti/wova-studio/tree/main",
       date: "April 2023 - Jul 2023",
     },
+    {
+      name: "Psico Vivir",
+      description: `Developed alongside a team of 5 people an app for doctors and patients to communicate and schedule appointments. 
+        The app handles login, signup, profile management, appointments, filtering and more. It even has a chat system with real time updates!`,
+      technologies: ["React", "TypeScript", "TailwindCSS", "Firebase", "Vite"],
+      url: "https://psico-vivir.web.app/",
+      githubUrl: "https://github.com/ValeriaZampetti/Psico-vivir",
+      date: "January 2023 - March 2023",
+    },
   ];
 
   const projectsCard = projects.map((project, index) => (
