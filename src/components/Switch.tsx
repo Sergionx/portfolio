@@ -20,9 +20,9 @@ export default function Switch({ onCheck, value }: Props) {
           peer-checked:after:translate-x-full peer-checked:after:border-white 
           peer-checked:bg-tertiary-600 dark:peer-checked:bg-tertiary-800
           after:content-[''] after:absolute after:top-[3px] after:left-[6px]
-          peer-checked:after:left-[12px]
+          peer-checked:after:left-[12px] peer-checked:translate-x
           after:bg-white after:border-gray-300 after:border after:rounded-full 
-          after:h-[18px] after:w-[18px] after:transition-all"
+          after:h-[18px] after:w-[18px] aafter:transition-all after:ease-in-out after:duration-300"
       ></div>
     </label>
   );
