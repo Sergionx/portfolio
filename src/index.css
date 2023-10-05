@@ -26,8 +26,8 @@ html {
   }
 
   .glass {
-    @apply bg-normal-white/60 dark:bg-normal-white/20 border-2 border-[#d8d8d8] dark:border-white/20 transition-colors duration-500
-      backdrop-blur;
+    @apply bg-normal-white/60 dark:bg-normal-white/20 
+      border-2 border-[#d8d8d8] dark:border-white/20 backdrop-blur;
   }
 
   .glass-sm {

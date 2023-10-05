@@ -30,7 +30,7 @@ export default function Hero() {
           glass-sm hover:glass-lg"
       >
         <a
-          className="cursor-pointer hover:text-primary-400 dark:hover:text-primary-700"
+          className="cursor-pointer hover:text-primary-400 dark:hover:text-primary-700 "
           href="https://github.com/Sergionx"
           target="_blank"
           rel="noreferrer"

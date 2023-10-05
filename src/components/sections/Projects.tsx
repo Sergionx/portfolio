@@ -89,7 +89,7 @@ export default function Projects() {
       <article
         className="bg-gradient-to-tl from-tertiary-300 to-tertiary-100 
         dark:from-tertiary-800 dark:to-tertiary-600
-        transition-all duration-300
+        transition-transform duration-300 ease-in-out 
       hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
         max-w-md w-full p-4 rounded-md shadow-md relative flex flex-col"
       >
@@ -101,7 +101,7 @@ export default function Projects() {
         />
 
         <a
-          className="flex  items-center gap-4 text-primary-600 dark:text-primary-500 pr-8"
+          className="flex items-center gap-4 text-primary-600 dark:text-primary-500 pr-8"
           href={project.url}
           target="_blank"
           rel="noreferrer"
