@@ -105,7 +105,7 @@ export default function Projects() {
       />
 
       <article
-        className="bg-gradient-to-tl from-tertiary-300 to-tertiary-100 
+        className="bg-gradient-to-tl h-[16rem] from-tertiary-300 to-tertiary-100 
         dark:from-tertiary-800 dark:to-tertiary-600
         transition-transform duration-300 ease-in-out 
       hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
@@ -143,11 +143,12 @@ export default function Projects() {
           {project.date}
         </time>
 
-        <p className="font-medium mt-4 break-words w-full ">
+        <p className="font-medium mt-4 break-words line-clamp-3 selection:gradient 
+        selection:bg-primary-600 dark:selection:bg-primary-700">
           {project.description}
         </p>
 
-        <ul className="flex flex-wrap items-center gap-2 font-bold text-sm mt-4 pr-5">
+        <ul className="flex flex-wrap items-center gap-2 font-bold text-sm mt-auto pr-5">
           {project.technologies.map((technology, techIndex) => (
             <li
               className="bg-tertiary-300 text-tertiary-800 py-1 px-3 rounded-xl"
