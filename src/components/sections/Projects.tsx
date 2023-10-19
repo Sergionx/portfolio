@@ -18,6 +18,23 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
+      name: "Chat Room System",
+      description:
+        "Leveraged Express and Socket.io to create a real time encrypted chat system using web sockets that can send text and images. The data storage of the rooms is handled by Redis",
+      technologies: [
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Vite",
+        "Express",
+        "Socket.io",
+        "Redis",
+      ],
+      url: "https://chat-socket-frontend-indol.vercel.app/",
+      githubUrl: "https://github.com/Sergionx/Chat-socket",
+      date: "September 2023 - October 2023",
+    },
+    {
       name: "ChatGPT implementation",
       description:
         "Integrated ChatGPT API on a web based chat system, using React, Tailwind and Firebase as a backend.",
@@ -76,6 +93,7 @@ export default function Projects() {
     },
   ];
 
+  // TODO - Manejar diferentes tamaños
   const projectsCard = projects.map((project, index) => (
     <div key={index}>
       <Tooltip
@@ -129,7 +147,7 @@ export default function Projects() {
           {project.description}
         </p>
 
-        <ul className="flex flex-wrap items-center gap-2 font-bold text-sm mt-4 pr-10 ">
+        <ul className="flex flex-wrap items-center gap-2 font-bold text-sm mt-4 pr-5">
           {project.technologies.map((technology, techIndex) => (
             <li
               className="bg-tertiary-300 text-tertiary-800 py-1 px-3 rounded-xl"
