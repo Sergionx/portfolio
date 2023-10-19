@@ -144,7 +144,7 @@ export default function Projects() {
         </time>
 
         <p className="font-medium mt-4 break-words line-clamp-3 selection:gradient 
-        selection:bg-primary-600 dark:selection:bg-primary-700">
+        selection:bg-primary-400 dark:selection:bg-primary-700">
           {project.description}
         </p>
 
