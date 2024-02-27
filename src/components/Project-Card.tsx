@@ -2,6 +2,8 @@ import { AiFillLock, AiFillGithub } from "react-icons/ai";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsFillBuildingFill } from "react-icons/bs";
 import { Tooltip } from "react-tooltip";
+import { cn } from "../utils/classnames";
+import { IconType } from "react-icons";
 
 export interface Project {
   name: string;
@@ -19,6 +21,8 @@ export function ProjectCard({
   project: Project;
   index: number;
 }) {
+  const linkIcon: IconType = project.githubUrl ? AiFillLock : BiLinkExternal;
+
   return (
     <div key={index}>
       <Tooltip
@@ -30,7 +34,7 @@ export function ProjectCard({
       />
 
       <article
-        className="bg-gradient-to-tl h-[16rem] from-tertiary-300 to-tertiary-100 
+        className="bg-gradient-to-tl  from-tertiary-300 to-tertiary-100 
       dark:from-tertiary-800 dark:to-tertiary-600
       transition-transform duration-300 ease-in-out 
     hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
@@ -39,8 +43,10 @@ export function ProjectCard({
         <BsFillBuildingFill
           size={18}
           data-tooltip-id={"private" + index}
-          className={`absolute top-4 right-4 text-normal-black/80 dark:text-normal-white/70
-    ${project.githubUrl ? "hidden" : "block"}`}
+          className={cn(
+            "absolute top-4 right-4 text-normal-black/80 dark:text-normal-white/70",
+            project.githubUrl ? "hidden" : "block"
+          )}
         />
 
         <a
@@ -52,15 +58,17 @@ export function ProjectCard({
           <h6 className="font-semibold group-hover:font-bold">
             {project.name}
           </h6>{" "}
+          
           <AiFillLock
             size={18}
-            className={`shrink-0 ${
+            className={cn(
+              "shrink-0 active:animate-shake",
               project.githubUrl ? "hidden" : "block"
-            } active:animate-shake`}
+            )}
           />
           <BiLinkExternal
             size={18}
-            className={`shrink-0 ${project.githubUrl ? "block" : "hidden"}`}
+            className={cn("shrink-0", project.githubUrl ? "block" : "hidden")}
           />
         </a>
 
@@ -69,8 +77,8 @@ export function ProjectCard({
         </time>
 
         <p
-          className="font-medium mt-4 break-words line-clamp-3 selection:gradient 
-    selection:bg-primary-400 dark:selection:bg-primary-700"
+          className="font-medium my-4 break-words line-clamp-3 selection:gradient 
+        selection:bg-primary-400 dark:selection:bg-primary-700"
         >
           {project.description}
         </p>
@@ -88,13 +96,14 @@ export function ProjectCard({
           <AiFillLock
             size={32}
             data-tooltip-id={"private" + index}
-            className={`${
+            className={cn(
+              "active:animate-shake outline-none",
               project.githubUrl ? "hidden" : "block"
-            } active:animate-shake outline-none`}
+            )}
           />
           <AiFillGithub
             size={32}
-            className={`${project.githubUrl ? "block" : "hidden"}`}
+            className={project.githubUrl ? "block" : "hidden"}
           />
         </a>
       </article>
@@ -104,7 +113,10 @@ export function ProjectCard({
 
 function TechonologyList({ technologies }: { technologies: string[] }) {
   return (
-    <ul className="flex flex-wrap items-center gap-2 font-bold text-sm mt-auto pr-5">
+    <ul
+      className="flex flex-wrap items-center gap-2 font-bold text-sm mt-auto pr-5
+        overflow-hidden max-h-16 scrollbar-hide"
+    >
       {technologies.map((technology, techIndex) => (
         <li
           className="bg-tertiary-300 text-tertiary-800 py-1 px-3 rounded-xl"
