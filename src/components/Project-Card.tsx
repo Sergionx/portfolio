@@ -12,7 +12,13 @@ export interface Project {
   date: string;
 }
 
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
+export function ProjectCard({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
   return (
     <div key={index}>
       <Tooltip
@@ -25,10 +31,10 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
 
       <article
         className="bg-gradient-to-tl h-[16rem] from-tertiary-300 to-tertiary-100 
-    dark:from-tertiary-800 dark:to-tertiary-600
-    transition-transform duration-300 ease-in-out 
-  hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
-    max-w-md w-full p-4 rounded-md shadow-md relative flex flex-col"
+      dark:from-tertiary-800 dark:to-tertiary-600
+      transition-transform duration-300 ease-in-out 
+    hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
+      max-w-md w-full p-4 rounded-md shadow-md relative flex flex-col"
       >
         <BsFillBuildingFill
           size={18}
@@ -69,16 +75,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           {project.description}
         </p>
 
-        <ul className="flex flex-wrap items-center gap-2 font-bold text-sm mt-auto pr-5">
-          {project.technologies.map((technology, techIndex) => (
-            <li
-              className="bg-tertiary-300 text-tertiary-800 py-1 px-3 rounded-xl"
-              key={techIndex}
-            >
-              {technology}
-            </li>
-          ))}
-        </ul>
+        <TechonologyList technologies={project.technologies} />
 
         <a
           className="cursor-pointer hover:text-primary-400 dark:hover:text-primary-700 shrink-0
@@ -102,5 +99,20 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         </a>
       </article>
     </div>
+  );
+}
+
+function TechonologyList({ technologies }: { technologies: string[] }) {
+  return (
+    <ul className="flex flex-wrap items-center gap-2 font-bold text-sm mt-auto pr-5">
+      {technologies.map((technology, techIndex) => (
+        <li
+          className="bg-tertiary-300 text-tertiary-800 py-1 px-3 rounded-xl"
+          key={techIndex}
+        >
+          {technology}
+        </li>
+      ))}
+    </ul>
   );
 }
