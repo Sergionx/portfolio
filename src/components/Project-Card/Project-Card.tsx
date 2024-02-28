@@ -56,42 +56,9 @@ export function ProjectCard({
         dark:from-tertiary-800 dark:to-tertiary-600 `
         )}
       >
-        <div className="absolute top-4 right-4 flex gap-4">
-          <BsFillBuildingFill
-            size={18}
-            data-tooltip-id={"private" + index}
-            className={cn(
-              "text-normal-black/80 dark:text-normal-white/70",
-              project.githubUrl ? "hidden" : "block"
-            )}
-          />
-          {project.featured && <StarIcon index={index} />}
-        </div>
+        <CornerIcons project={project} index={index} />
 
-        <a
-          className={cn(
-            "flex items-center gap-4 text-primary-600 dark:text-primary-500 "
-          )}
-          style={{ paddingRight: `${16 + numberIcons * 24}px` }}
-          href={project.url}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <h6 className="font-semibold group-hover:font-bold w-mi">
-            {project.name}
-          </h6>{" "}
-          <AiFillLock
-            size={18}
-            className={cn(
-              "shrink-0 active:animate-shake",
-              project.url ? "hidden" : "block"
-            )}
-          />
-          <BiLinkExternal
-            size={18}
-            className={cn("shrink-0", project.url ? "block" : "hidden")}
-          />
-        </a>
+        <TitleLink project={project} numberIcons={numberIcons} />
 
         <time className="text-normal-black/80 dark:text-normal-white/70 mt-2">
           {project.date}
@@ -132,6 +99,56 @@ export function ProjectCard({
   );
 }
 
+function CornerIcons({ project, index }: { project: Project; index: number }) {
+  return (
+    <div className="absolute top-4 right-4 flex gap-4">
+      <BsFillBuildingFill
+        size={18}
+        data-tooltip-id={"private" + index}
+        className={cn(
+          "text-normal-black/80 dark:text-normal-white/70",
+          project.githubUrl ? "hidden" : "block"
+        )}
+      />
+      {project.featured && <StarIcon index={index} />}
+    </div>
+  );
+}
+
+function TitleLink({
+  project,
+  numberIcons,
+}: {
+  project: Project;
+  numberIcons: number;
+}) {
+  return (
+    <a
+      className={cn(
+        "flex items-center gap-4 text-primary-600 dark:text-primary-500 "
+      )}
+      style={{ paddingRight: `${16 + numberIcons * 24}px` }}
+      href={project.url}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <h6 className="font-semibold group-hover:font-bold w-mi">
+        {project.name}
+      </h6>{" "}
+      <AiFillLock
+        size={18}
+        className={cn(
+          "shrink-0 active:animate-shake",
+          project.url ? "hidden" : "block"
+        )}
+      />
+      <BiLinkExternal
+        size={18}
+        className={cn("shrink-0", project.url ? "block" : "hidden")}
+      />
+    </a>
+  );
+}
 function TechonologyList({ technologies }: { technologies: string[] }) {
   // TODO - Add ellipsis when the list is too long
   return (
