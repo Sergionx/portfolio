@@ -25,7 +25,7 @@ export default function Hero() {
       {/* TODO - Iconos con gradientes */}
       <footer
         className="flex flex-col sm:flex-row items-center 
-          max-h-[20rem] sm:max-h-16 max-w-[200px] sm:max-w-[500px] mx-auto 
+          max-sm:w-fit max-w-[500px] mx-auto 
           rounded-xl p-2 gap-4 mt-8 shadow-sm 
           glass-sm hover:glass-lg"
       >
