@@ -1,0 +1,13 @@
+.card-featured {
+  border: solid 5px transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  background-image: linear-gradient(to top left, #94bffc, #dbe8fe),
+    linear-gradient(to right, #f79609, #d82a2a);
+}
+
+.dark .card-featured {
+  background-image: linear-gradient(to top left, #1f39ae, #2759e9),
+    linear-gradient(to right, #f79609, #d82a2a);
+}
