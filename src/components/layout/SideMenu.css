@@ -2,7 +2,7 @@
 @import "../../index.css";
 
 .link {
-  @apply relative text-2xl font-bold w-full text-normal-black dark:text-normal-white  hover:text-primary-400;
+  @apply relative text-2xl font-bold w-full text-normal-black dark:text-normal-white hover:text-primary-400;
 
   transition: ease-in-out 0.3s;
   opacity: 0.75;
@@ -13,7 +13,7 @@
     &.closed {
       transform: translateX(-50px) scale(1.1);
     }
-    opacity: 0.9;
+    opacity: 1;
   }
 
   &.closed {
