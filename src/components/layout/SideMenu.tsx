@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Header from "./Header";
 import "./SideMenu.css";
+import { cn } from "../../utils/classnames";
 
 export default function SideMenu() {
   const [activeLink, setActiveLink] = useState(5);
@@ -11,7 +12,7 @@ export default function SideMenu() {
 
   useEffect(() => {
     function handleClickOutside(event: any) {
-      if (!event.target!.closest(".menu-button") ) {
+      if (!event.target!.closest(".menu-button")) {
         setIsMenuOpen(false);
       }
     }
@@ -30,16 +31,18 @@ export default function SideMenu() {
   const links = [
     { name: "Home", offset: 0 },
     { name: "Projects", offset: 0 },
-    { name: "Experience", offset:0 },
+    { name: "Experience", offset: 0 },
     { name: "About", offset: -600 },
   ];
 
   // REVIEW - Hover gradient
   const anchorLinks = links.map((link, index) => (
     <li
-      className={`link ${activeLink === index ? "active" : ""} ${
-        isMenuOpen ? "open" : "closed"
-      }`}
+      className={cn("link", {
+        active: activeLink === index,
+        open: isMenuOpen,
+        closed: !isMenuOpen,
+      })}
       key={index}
     >
       <Link
