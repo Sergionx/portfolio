@@ -22,7 +22,10 @@ export default function Projects() {
         working on something new, so check back soon for updates!
       </p>
 
-      <div className="flex flex-wrap gap-6 justify-center mt-6 max-w-[140rem]">
+      <div
+        className="flex flex-wrap gap-6 justify-center mt-6 max-w-[140rem]
+        px-1 xl:px-8"
+      >
         {projectsCard}
       </div>
     </>
