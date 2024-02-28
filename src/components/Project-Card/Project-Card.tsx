@@ -48,8 +48,8 @@ export function ProjectCard({
       hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
         max-w-md w-full p-4 rounded-md shadow-md relative flex flex-col`,
           project.featured
-            ? "card-featured"
-            : `bg-gradient-to-tl from-tertiary-300 to-tertiary-100 
+            ? "card-featured h-full"
+            : `h-64 bg-gradient-to-tl from-tertiary-300 to-tertiary-100 
         dark:from-tertiary-800 dark:to-tertiary-600 `
         )}
       >
@@ -127,10 +127,11 @@ export function ProjectCard({
 }
 
 function TechonologyList({ technologies }: { technologies: string[] }) {
+  // TODO - Add ellipsis when the list is too long
   return (
     <ul
       className="flex flex-wrap items-center gap-2 font-bold text-sm mt-auto pr-8
-        "
+       "
     >
       {technologies.map((technology, techIndex) => (
         <li
