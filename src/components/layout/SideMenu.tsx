@@ -64,9 +64,9 @@ export default function SideMenu() {
       <Header />
 
       <button
+        aria-label="Menu"
         className="fixed left-4 top-4 rounded-lg md:hidden z-[1000] p-1 
-          text-normal-black dark:text-normal-white menu-button
-        "
+          text-normal-black dark:text-normal-white menu-button"
         onClick={() => {
           setIsMenuOpen(!isMenuOpen);
         }}
