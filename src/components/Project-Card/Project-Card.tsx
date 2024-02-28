@@ -44,12 +44,12 @@ export function ProjectCard({
 
       <article
         className={cn(
-          `transition-transform duration-300 ease-in-out  
+          `transition-transform duration-300 ease-in-out h-full
       hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
         max-w-md w-full p-4 rounded-md shadow-md relative flex flex-col`,
           project.featured
-            ? "card-featured h-full"
-            : `h-64 bg-gradient-to-tl from-tertiary-300 to-tertiary-100 
+            ? "card-featured"
+            : ` bg-gradient-to-tl from-tertiary-300 to-tertiary-100 
         dark:from-tertiary-800 dark:to-tertiary-600 `
         )}
       >
@@ -131,7 +131,8 @@ function TechonologyList({ technologies }: { technologies: string[] }) {
   return (
     <ul
       className="flex flex-wrap items-center gap-2 font-bold text-sm mt-auto pr-8
-       "
+      "
+      // overflow-hidden max-h-16 
     >
       {technologies.map((technology, techIndex) => (
         <li
@@ -165,7 +166,13 @@ function StarIcon({ index }: { index: number }) {
             <stop offset="100%" stopColor="#db6f04" />
           </linearGradient>
 
-          <linearGradient id="gradient-dark" x1="50%" x2="50%" y1="10%" y2="100%">
+          <linearGradient
+            id="gradient-dark"
+            x1="50%"
+            x2="50%"
+            y1="10%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor="#faa7a7" />
             <stop offset="100%" stopColor="#f79609" />
           </linearGradient>
