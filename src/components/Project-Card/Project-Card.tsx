@@ -75,15 +75,14 @@ export function ProjectCard({
 
         <a
           className="cursor-pointer hover:text-primary-400 dark:hover:text-primary-700 shrink-0
-      absolute right-4 bottom-4"
+            absolute right-2 bottom-2 p-2"
           href={project.githubUrl}
           target="_blank"
           rel="noreferrer"
+          data-tooltip-id={!project.githubUrl ? "private" + index : ""}
         >
-          {/* TODO - Tooltip Private respository */}
           <AiFillLock
             size={32}
-            data-tooltip-id={"private" + index}
             className={cn(
               "active:animate-shake outline-none",
               project.githubUrl ? "hidden" : "block"
