@@ -22,6 +22,9 @@ export function ProjectCard({
   project: Project;
   index: number;
 }) {
+  const numberIcons =
+    (Number(!project.githubUrl) || 0) + (Number(project.featured) || 0);
+
   return (
     <div key={index}>
       <Tooltip
@@ -53,25 +56,28 @@ export function ProjectCard({
         dark:from-tertiary-800 dark:to-tertiary-600 `
         )}
       >
-        <div className="absolute top-4 right-4">
-          {/* <BsFillBuildingFill
+        <div className="absolute top-4 right-4 flex gap-4">
+          <BsFillBuildingFill
             size={18}
             data-tooltip-id={"private" + index}
             className={cn(
-              "absolute top-4 right-4 text-normal-black/80 dark:text-normal-white/70",
+              "text-normal-black/80 dark:text-normal-white/70",
               project.githubUrl ? "hidden" : "block"
             )}
-          /> */}
+          />
           {project.featured && <StarIcon index={index} />}
         </div>
 
         <a
-          className="flex items-center gap-4 text-primary-600 dark:text-primary-500 pr-8"
+          className={cn(
+            "flex items-center gap-4 text-primary-600 dark:text-primary-500 "
+          )}
+          style={{ paddingRight: `${16 + numberIcons * 24}px` }}
           href={project.url}
           target="_blank"
           rel="noreferrer"
         >
-          <h6 className="font-semibold group-hover:font-bold">
+          <h6 className="font-semibold group-hover:font-bold w-mi">
             {project.name}
           </h6>{" "}
           <AiFillLock
@@ -132,7 +138,7 @@ function TechonologyList({ technologies }: { technologies: string[] }) {
     <ul
       className="flex flex-wrap items-center gap-2 font-bold text-sm mt-auto pr-8
       "
-      // overflow-hidden max-h-16 
+      // overflow-hidden max-h-16
     >
       {technologies.map((technology, techIndex) => (
         <li
