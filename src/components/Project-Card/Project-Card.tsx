@@ -131,9 +131,9 @@ function TitleLink({
       target="_blank"
       rel="noreferrer"
     >
-      <h6 className="font-semibold group-hover:font-bold w-mi">
+      <span className="font-semibold group-hover:font-bold">
         {project.name}
-      </h6>{" "}
+      </span>{" "}
       <AiFillLock
         size={18}
         className={cn(
