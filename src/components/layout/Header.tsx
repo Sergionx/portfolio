@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import spainFlag from "../../assets/es.svg";
 import usaFlag from "../../assets/us.svg";
 
@@ -51,7 +51,7 @@ export default function Header() {
       ></div> */}
 
       <section className="flex gap-2 items-center text-tertiary-800 dark:text-tertiary-300">
-        <BsFillSunFill alt="Sun" size={24} />
+        <BsFillSunFill aria-label="Sun" size={24} />
 
         <Switch
           value={isDarkMode}
@@ -60,7 +60,7 @@ export default function Header() {
           }}
         />
 
-        <BsFillMoonFill alt="Moon" size={24} />
+        <BsFillMoonFill aria-label="Moon" size={24} />
       </section>
     </header>
   );
