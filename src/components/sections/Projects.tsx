@@ -1,14 +1,16 @@
-import useProjects from "../../hooks/useProjects";
+import { Pagination } from "@nextui-org/react";
 import { ProjectCard } from "../Project-Card/Project-Card";
+import { projects } from "../../data/projects";
+import usePagination from "../../hooks/usePagination";
 
 export default function Projects() {
   // TODO PRIORIDAD - Filtros de proyectos
-  // TODO PRIORIDAD - Pagination de proyectos
-
-  const { projects } = useProjects();
-
+  const { page, pages, setPage, items } = usePagination({
+    data: projects,
+    defaultRowsPerPage: 5,
+  });
   // TODO - Manejar diferentes tamaños
-  const projectsCard = projects.map((project, index) => (
+  const projectsCard = items.map((project, index) => (
     <ProjectCard project={project} index={index} key={index} />
   ));
 
@@ -22,12 +24,23 @@ export default function Projects() {
         working on something new, so check back soon for updates!
       </p>
 
+      {/* REVIEW - Considrar refactorizar esto y usar bento */}
       <div
         className="flex flex-wrap gap-6 justify-center mt-6 max-w-[140rem]
         px-1 xl:px-8"
       >
         {projectsCard}
       </div>
+
+      <Pagination
+        showControls
+        showShadow
+        color="secondary"
+        page={page}
+        total={pages}
+        onChange={setPage}
+        className="mt-4"
+      />
     </>
   );
 }
