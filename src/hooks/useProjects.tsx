@@ -38,6 +38,23 @@ export default function useProjects() {
       date: "September 2023 - October 2023",
     },
     {
+      name: "Metro-Grama",
+      description:
+        "A Graph visualization tool for students to plan their careers. It can query multiple careers at once and show the subjects that are shared between them.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Golang",
+        "SurrealDB",
+        "Vite",
+      ],
+      date: "",
+      url: "https://metrograma.tech/materias?careers=career%3Asistemas",
+      githubUrl: "https://github.com/MetroTech-UNIMET/Metro-Grama",
+      featured: true,
+    },
+    {
       name: "ChatGPT implementation",
       description:
         "Integrated ChatGPT API on a web based chat system, using React, Tailwind and Firebase as a backend.",
