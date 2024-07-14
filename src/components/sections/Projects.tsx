@@ -1,18 +1,27 @@
-import { Pagination } from "@nextui-org/react";
+import { Pagination, Select, SelectItem } from "@nextui-org/react";
 import { ProjectCard } from "../Project-Card/Project-Card";
 import { projects } from "../../data/projects";
 import usePagination from "../../hooks/usePagination";
 
+const rowsPerPageOptions = [
+  { key: 5, label: "5" },
+  { key: 10, label: "10" },
+  { key: 15, label: "15" },
+];
+
 export default function Projects() {
   // TODO PRIORIDAD - Filtros de proyectos
-  const { page, pages, setPage, items } = usePagination({
-    data: projects,
-    defaultRowsPerPage: 5,
-  });
-  // TODO - Manejar diferentes tamaños
+  const { page, pages, setPage, rowsPerPage, setRowsPerPage, items } =
+    usePagination({
+      data: projects,
+      defaultRowsPerPage: 5,
+    });
+  // TODO - Click lo abre con framer motion
   const projectsCard = items.map((project, index) => (
     <ProjectCard project={project} index={index} key={index} />
   ));
+
+  console.log({ rowsPerPage });
 
   return (
     <>
@@ -32,15 +41,33 @@ export default function Projects() {
         {projectsCard}
       </div>
 
-      <Pagination
-        showControls
-        showShadow
-        color="secondary"
-        page={page}
-        total={pages}
-        onChange={setPage}
-        className="mt-4"
-      />
+      <footer className="mt-4 flex flex-row flex-wrap w-full justify-around gap-4">
+        <Select
+          labelPlacement="outside-left"
+          label="Rows per page"
+          classNames={{
+            label: "w-32",
+            trigger: "w-20",
+          }}
+          className="w-fit"
+          // value={rowsPerPage.toString()}
+          selectedKeys={[rowsPerPage.toString()]} // Convert rowsPerPage to string
+          onChange={(e) => setRowsPerPage(Number(e.target.value))}
+        >
+          {rowsPerPageOptions.map((rows) => (
+            <SelectItem key={rows.key}>{rows.label}</SelectItem>
+          ))}
+        </Select>
+
+        <Pagination
+          showControls
+          showShadow
+          color="secondary"
+          page={page}
+          total={pages}
+          onChange={setPage}
+        />
+      </footer>
     </>
   );
 }
