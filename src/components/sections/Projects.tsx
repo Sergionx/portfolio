@@ -11,11 +11,13 @@ const rowsPerPageOptions = [
 
 export default function Projects() {
   // TODO PRIORIDAD - Filtros de proyectos
+
   const { page, pages, setPage, rowsPerPage, setRowsPerPage, items } =
     usePagination({
       data: projects,
       defaultRowsPerPage: 5,
     });
+    
   // TODO - Click lo abre con framer motion
   const projectsCard = items.map((project, index) => (
     <ProjectCard project={project} index={index} key={index} />
@@ -50,8 +52,7 @@ export default function Projects() {
             trigger: "w-20",
           }}
           className="w-fit"
-          // value={rowsPerPage.toString()}
-          selectedKeys={[rowsPerPage.toString()]} // Convert rowsPerPage to string
+          selectedKeys={[rowsPerPage.toString()]}
           onChange={(e) => setRowsPerPage(Number(e.target.value))}
         >
           {rowsPerPageOptions.map((rows) => (
