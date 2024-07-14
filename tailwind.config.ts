@@ -1,4 +1,11 @@
-const { nextui } = require("@nextui-org/react");
+import { nextui } from "@nextui-org/react";
+import {
+  primaryColor_Dark,
+  primaryColor_Light,
+  secondaryColor_Dark,
+  secondaryColor_Light,
+  tertiaryColor_Light,
+} from "./colors";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -26,45 +33,9 @@ export default {
         shake: "shake 1s ease-in-out",
       },
       colors: {
-        primary: {
-          50: "#fef2f2",
-          100: "#fde3e3",
-          200: "#fdcbcb",
-          300: "#faa7a7",
-          400: "#f57474",
-          500: "#eb4848",
-          600: "#d82a2a",
-          700: "#b21f1f",
-          800: "#961e1e",
-          900: "#7d1f1f",
-          950: "#440b0b",
-        },
-        secondary: {
-          50: "#fffaeb",
-          100: "#fef1c7",
-          200: "#fee389",
-          300: "#fecd4b",
-          400: "#fdbb2d",
-          500: "#f79609",
-          600: "#db6f04",
-          700: "#b64c07",
-          800: "#933b0d",
-          900: "#79310e",
-          950: "#461702",
-        },
-        tertiary: {
-          50: "#eff5ff",
-          100: "#dbe8fe",
-          200: "#c0d7fd",
-          300: "#94bffc",
-          400: "#629cf8",
-          500: "#3d77f4",
-          600: "#2759e9",
-          700: "#1f44d6",
-          800: "#1f39ae",
-          900: "#20368d",
-          950: "#182253",
-        },
+        primary: primaryColor_Light,
+        secondary: secondaryColor_Light,
+        tertiary: tertiaryColor_Light,
         "normal-white": "#F9F9FD",
         "normal-black": "#1E1E1E",
       },
@@ -73,7 +44,24 @@ export default {
       },
     },
   },
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      themes: {
+        light: {
+          colors: {
+            primary: primaryColor_Light,
+            secondary: secondaryColor_Light,
+          },
+        },
+        dark: {
+          colors: {
+            primary: primaryColor_Dark,
+            secondary: secondaryColor_Dark,
+          },
+        },
+      },
+    }),
+  ],
 };
 
 // https://uicolors.app/edit?sv1=my-sin:50-fffaeb/100-fef1c7/200-fee389/300-fecd4b/400-fdbb2d/500-f79609/600-db6f04/700-b64c07/800-933b0d/900-79310e/950-461702;jacksons-purple:50-eff5ff/100-dbe8fe/200-c0d7fd/300-94bffc/400-629cf8/500-3d77f4/600-2759e9/700-1f44d6/800-1f39ae/900-20368d/950-182253;roof-terracotta:50-fef2f2/100-fde3e3/200-fdcbcb/300-faa7a7/400-f57474/500-eb4848/600-d82a2a/700-b21f1f/800-961e1e/900-7d1f1f/950-440b0b
