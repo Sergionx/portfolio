@@ -87,10 +87,12 @@ export function ProjectCard({
               "active:animate-shake outline-none",
               project.githubUrl ? "hidden" : "block"
             )}
+            aria-label="Private"
           />
           <AiFillGithub
             size={32}
             className={project.githubUrl ? "block" : "hidden"}
+            aria-label="Github"
           />
         </a>
       </article>
