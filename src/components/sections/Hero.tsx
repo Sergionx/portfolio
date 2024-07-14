@@ -35,7 +35,7 @@ export default function Hero() {
           target="_blank"
           rel="noreferrer"
         >
-          <AiFillGithub size={32} />
+          <AiFillGithub aria-label="Github" size={32} />
         </a>
 
         <a
@@ -44,7 +44,7 @@ export default function Hero() {
           target="_blank"
           rel="noreferrer"
         >
-          <AiFillLinkedin size={32} />
+          <AiFillLinkedin aria-label="LinkedIn" size={32} />
         </a>
 
         <a
@@ -53,7 +53,7 @@ export default function Hero() {
           target="_blank"
           rel="noreferrer"
         >
-          <IoMailSharp size={32} />
+          <IoMailSharp aria-label="Email" size={32} />
         </a>
 
         <a
