@@ -1,20 +1,39 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
-import SideMenu from "./components/layout/SideMenu.tsx";
-import { NextUIProvider } from "@nextui-org/react";
-import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import { NextUIProvider, Spinner } from "@nextui-org/react";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
+import MainLayout from "./layouts/MainLayout.tsx";
+
+const App = lazy(() => import("./App.tsx"));
 
 const router = createBrowserRouter([
   {
-    path: "/portfolio",
-    element: (
-      <>
-        <SideMenu />
-        <App />
-      </>
-    ),
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/portfolio",
+        element: (
+          <Suspense
+            fallback={
+              <Spinner
+                className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                classNames={{
+                  wrapper: "w-[40vw] h-[40vw] max-w-[200px] max-h-[200px]",
+                }}
+              />
+            }
+          >
+            <App />
+          </Suspense>
+        ),
+      },
+    ],
   },
   {
     path: "*",

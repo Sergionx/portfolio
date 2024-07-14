@@ -6,10 +6,7 @@ import "react-tooltip/dist/react-tooltip.css";
 
 function App() {
   return (
-    <main
-      className="flex flex-col items-center  min-h-[200vh] px-8 md:px-48 transition-colors duration-500
-      dark:text-normal-white text-normal-black bg-normal-white dark:bg-normal-black"
-    >
+    <>
       <section
         id="Home"
         className="p-5 max-w-3xl flex items-center pt-32 md:pt-64"
@@ -28,7 +25,7 @@ function App() {
       <section id="About" className="flex flex-col pt-32 pb-72">
         <About />
       </section>
-    </main>
+    </>
   );
 }
 
