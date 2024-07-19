@@ -33,6 +33,11 @@ export default function usePagination<T>({
 
   const pages = Math.ceil(data.length / rowsPerPage);
 
+  function handleSetRowsPerPage(page: number) {
+    setRowsPerPage(page);
+    setPage(1);
+  }
+
   return {
     items,
 
@@ -40,7 +45,7 @@ export default function usePagination<T>({
     setPage,
 
     rowsPerPage,
-    setRowsPerPage,
+    setRowsPerPage: handleSetRowsPerPage,
 
     pages,
   };
