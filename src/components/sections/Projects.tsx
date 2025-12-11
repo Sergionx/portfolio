@@ -1,8 +1,10 @@
 import { Pagination, Select, SelectItem } from "@heroui/react";
+import { useTranslation } from "react-i18next";
+
 import { ProjectCard } from "../Project-Card/Project-Card";
+
 import { projects } from "@/data/projects";
 import usePagination from "@/hooks/usePagination";
-import { useTranslation } from "react-i18next";
 
 const rowsPerPageOptions = [
   { key: 5, label: "5" },
@@ -62,6 +64,7 @@ export default function Projects() {
         <Pagination
           showControls
           showShadow
+          isCompact
           color="secondary"
           page={page}
           total={pages}
