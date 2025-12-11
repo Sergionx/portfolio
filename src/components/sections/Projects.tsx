@@ -1,7 +1,7 @@
 import { Pagination, Select, SelectItem } from "@heroui/react";
 import { ProjectCard } from "../Project-Card/Project-Card";
-import { projects } from "../../data/projects";
-import usePagination from "../../hooks/usePagination";
+import { projects } from "@/data/projects";
+import usePagination from "@/hooks/usePagination";
 
 const rowsPerPageOptions = [
   { key: 5, label: "5" },

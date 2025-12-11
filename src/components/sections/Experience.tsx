@@ -1,4 +1,4 @@
-import { experiences } from "../../data/experiences";
+import { experiences } from "@/data/experiences";
 
 interface Experience {
   title: string;

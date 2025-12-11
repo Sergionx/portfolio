@@ -1,8 +1,8 @@
 import { AiFillLock, AiFillGithub } from "react-icons/ai";
 import { BiLinkExternal } from "react-icons/bi";
-import { BsFillBuildingFill, BsStar } from "react-icons/bs";
+import { BsFillBuildingFill } from "react-icons/bs";
 import { Tooltip } from "react-tooltip";
-import { cn } from "../../utils/classnames";
+import { cn } from "@/utils/classnames";
 
 export interface Project {
   name: string;
