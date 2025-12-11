@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
-import spainFlag from "../../assets/es.svg";
-import usaFlag from "../../assets/us.svg";
-
+import { useParams, useNavigate } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
+import spainFlag from "@/assets/es.svg";
+import usaFlag from "@/assets/us.svg";
+
 
 import Switch from "../Switch";
 
 export default function Header() {
+  const { t } = useTranslation();
+  const { locale } = useParams({ from: "/$locale" });
+  const navigate = useNavigate({ from: "/$locale" });
+  
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -31,27 +37,29 @@ export default function Header() {
         right-0 max-xs:top-10 top-0 xs:right-5 flex-col xs:flex-row 
     "
     >
-      {/* TODO - Add para cambiar idioma */}
-      {/* <section className="flex gap-2 items-center">
-        <img src={spainFlag} alt="Spain flag" className="w-6 h-6" />
+      <section className="flex gap-2 items-center">
+        <img src={spainFlag} alt={t("header.spainFlag")} className="w-6 h-6" />
 
         <Switch
-          value={isDarkMode}
+          value={locale !== "es"}
           onCheck={(checked) => {
-            setIsDarkMode(checked);
+            const newLocale = checked ? "en" : "es";
+            navigate({
+              params: (prev) => ({ ...prev, locale: newLocale }),
+            });
           }}
         />
 
-        <img src={usaFlag} alt="USA flag" className="w-6 h-6" />
-      </section> */}
+        <img src={usaFlag} alt={t("header.usaFlag")} className="w-6 h-6" />
+      </section>
 
-      {/* <div
+      <div
         id="separator"
         className="border border-tertiary-400 dark:border-tertiary-950 h-[25px] max-xs:hidden"
-      ></div> */}
+      ></div>
 
       <section className="flex gap-2 items-center text-tertiary-800 dark:text-tertiary-300">
-        <BsFillSunFill aria-label="Sun" size={24} />
+        <BsFillSunFill aria-label={t("header.sun")} size={24} />
 
         <Switch
           value={isDarkMode}
@@ -60,7 +68,7 @@ export default function Header() {
           }}
         />
 
-        <BsFillMoonFill aria-label="Moon" size={24} />
+        <BsFillMoonFill aria-label={t("header.moon")} size={24} />
       </section>
     </header>
   );

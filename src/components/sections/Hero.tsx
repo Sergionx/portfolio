@@ -4,19 +4,22 @@ import {
   AiOutlineDownload,
 } from "react-icons/ai";
 import { IoMailSharp } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <div className="shadow-gradient">
       <header className="text-center font-bold relative">
         {/* <h1 className="text-8xl mt-2 text-welcome">Welcome</h1> */}
         <h2 className="font-bold text-4xl min-[300px]:text-6xl sm:text-8xl text-gradient-color">
-          Hi, I'm Sergionx
+          {t("hero.greeting")} Sergionx
         </h2>
       </header>
 
       <p className="text-lg sm:text-xl font-semibold text-center mt-4">
-        And my real name is{" "}
+        {t("hero.realNamePrefix")}{" "}
         <span className="font-bold underline underline-offset-2">
           Sergio Suárez
         </span>
@@ -35,7 +38,7 @@ export default function Hero() {
           target="_blank"
           rel="noreferrer"
         >
-          <AiFillGithub aria-label="Github" size={32} />
+          <AiFillGithub aria-label={t("hero.github")} size={32} />
         </a>
 
         <a
@@ -44,7 +47,7 @@ export default function Hero() {
           target="_blank"
           rel="noreferrer"
         >
-          <AiFillLinkedin aria-label="LinkedIn" size={32} />
+          <AiFillLinkedin aria-label={t("hero.linkedin")} size={32} />
         </a>
 
         <a
@@ -53,7 +56,7 @@ export default function Hero() {
           target="_blank"
           rel="noreferrer"
         >
-          <IoMailSharp aria-label="Email" size={32} />
+          <IoMailSharp aria-label={t("hero.email")} size={32} />
         </a>
 
         <a
@@ -65,7 +68,7 @@ export default function Hero() {
           rel="noreferrer"
         >
           <AiOutlineDownload size={28} className="hidden sm:block" />
-          Resume
+          {t("hero.resume")}
         </a>
       </footer>
     </div>

@@ -2,6 +2,7 @@ import { AiFillLock, AiFillGithub } from "react-icons/ai";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsFillBuildingFill } from "react-icons/bs";
 import { Tooltip } from "react-tooltip";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@/utils/classnames";
 
@@ -22,6 +23,7 @@ export function ProjectCard({
   project: Project;
   index: number;
 }) {
+  const { t } = useTranslation();
   const numberIcons =
     (Number(!project.githubUrl) || 0) + (Number(project.featured) || 0);
 
@@ -30,7 +32,7 @@ export function ProjectCard({
       <Tooltip
         id={"private" + index}
         place="bottom"
-        content="This is a private repository"
+        content={t("projects.tooltips.private")}
         className="z-50"
         clickable={true}
       />
@@ -39,7 +41,7 @@ export function ProjectCard({
         <Tooltip
           id={"featured" + index}
           place="bottom"
-          content="This is one of my best projects!"
+          content={t("projects.tooltips.featured")}
           className="z-50"
           clickable={true}
         />
@@ -62,14 +64,14 @@ export function ProjectCard({
         <TitleLink project={project} numberIcons={numberIcons} />
 
         <time className="text-normal-black/80 dark:text-normal-white/70 mt-2">
-          {project.date}
+          {t(project.date)}
         </time>
 
         <p
           className="font-medium my-4 wrap-break-word line-clamp-3 selection:gradient 
         selection:bg-primary-400 dark:selection:bg-primary-700"
         >
-          {project.description}
+          {t(project.description)}
         </p>
 
         <TechonologyList technologies={project.technologies} />
@@ -88,12 +90,12 @@ export function ProjectCard({
               "active:animate-shake outline-hidden",
               project.githubUrl ? "hidden" : "block"
             )}
-            aria-label="Private"
+            aria-label={t("projects.tooltips.private")}
           />
           <AiFillGithub
             size={32}
             className={project.githubUrl ? "block" : "hidden"}
-            aria-label="Github"
+            aria-label={t("hero.github")}
           />
         </a>
       </article>

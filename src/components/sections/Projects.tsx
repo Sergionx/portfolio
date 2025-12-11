@@ -2,6 +2,7 @@ import { Pagination, Select, SelectItem } from "@heroui/react";
 import { ProjectCard } from "../Project-Card/Project-Card";
 import { projects } from "@/data/projects";
 import usePagination from "@/hooks/usePagination";
+import { useTranslation } from "react-i18next";
 
 const rowsPerPageOptions = [
   { key: 5, label: "5" },
@@ -10,6 +11,7 @@ const rowsPerPageOptions = [
 ];
 
 export default function Projects() {
+  const { t } = useTranslation();
   // TODO PRIORIDAD - Filtros de proyectos
 
   const { page, pages, setPage, rowsPerPage, setRowsPerPage, items } =
@@ -23,16 +25,13 @@ export default function Projects() {
     <ProjectCard project={project} index={index} key={index} />
   ));
 
-  console.log({ rowsPerPage });
 
   return (
     <>
-      <h2>Projects</h2>
+      <h2>{t("projects.title")}</h2>
 
       <p className="text-lg max-w-prose text mt-2">
-        Here are some of the projects I've worked on recently. Keep In mind that
-        some projects are not public for compoany security reasons. I'm always
-        working on something new, so check back soon for updates!
+        {t("projects.description")}
       </p>
 
       {/* REVIEW - Considrar refactorizar esto y usar bento */}
@@ -46,7 +45,7 @@ export default function Projects() {
       <footer className="mt-4 flex flex-row flex-wrap w-full justify-around gap-4">
         <Select
           labelPlacement="outside-left"
-          label="Rows per page"
+          label={t("projects.rowsPerPage")}
           classNames={{
             label: "w-32",
             trigger: "w-20",

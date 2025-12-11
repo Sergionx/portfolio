@@ -1,4 +1,5 @@
 import { experiences } from "@/data/experiences";
+import { useTranslation } from "react-i18next";
 
 interface Experience {
   title: string;
@@ -8,18 +9,19 @@ interface Experience {
 }
 
 export default function Experience() {
+  const { t } = useTranslation();
   const experiencesList = experiences.map((experience, index) => (
     <li className="ml-4" key={index}>
       <div className="absolute w-3 h-3 bg-gray-400 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
 
       <time className="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-gray-500">
-        {experience.time}
+        {t(experience.time)}
       </time>
 
-      <h3 className="text-lg font-semibold  mb-2">{experience.title}</h3>
+      <h3 className="text-lg font-semibold  mb-2">{t(experience.title)}</h3>
 
       <p className="mb-4 last:mb-0 text-gray-800 dark:text-gray-400 max-w-prose text-balance">
-        {experience.description}
+        {t(experience.description)}
       </p>
       {/* TODO - Considerar poner boton de la empresa */}
 
@@ -49,7 +51,7 @@ export default function Experience() {
 
   return (
     <>
-      <h2>Experience</h2>
+      <h2>{t("experience.title")}</h2>
 
       <ol
         className="relative border-l border-gray-400 dark:border-gray-700

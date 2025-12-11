@@ -1,0 +1,90 @@
+{
+  "header": {
+    "sun": "Sol",
+    "moon": "Luna",
+    "spainFlag": "Bandera de España",
+    "usaFlag": "Bandera de USA"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "realNamePrefix": "Y mi nombre real es",
+    "resume": "Currículum",
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "p1": "Desde 2020 comencé mi viaje como ingeniero de software, en el presente soy un <1>desarrollador fullstack</1> en el último año de mi carrera (Ingeniería de Sistemas).",
+    "p2": "El año pasado entregué en mi empresa anterior aplicaciones web usando React y Angular, y servicios backend usando Firebase. <1> Mejorando el flujo de trabajo y el tiempo de entrega</1> de mi equipo.",
+    "p3": "Como programador, las 2 palabras que mejor me definen son <1>adaptación</1> y <3> curiosidad</3>. Mi objetivo es aprender algo nuevo cada día, y siempre estoy buscando nuevos desafíos para mejorar mis habilidades."
+  },
+  "experience": {
+    "title": "Experiencia",
+    "items": {
+        "jm": {
+            "title": "Ingeniero Frontend en JM Solutions",
+            "time": "Abril 2024 - Actualidad",
+            "description": "Mi responsabilidad principal es mantener la integridad del frontend mientras proporciono un buen rendimiento de la aplicación. El proyecto consiste en un ERP y he entregado tareas como reducir un 30% de las llamadas a la API y crear filtros personalizados para consultar datos."
+        },
+        "yummy": {
+            "title": "Yummy Codicon",
+            "time": "Agosto 2023",
+            "description": "Seleccionado para competir en un hackathon de 50 personas para entregar una solución a un problema existente en una aplicación. Los equipos estaban formados por 5 personas y teníamos 24 horas para entregar una solución. La idea de nuestro equipo fue mejorar la experiencia de usuario de Yummy Rides (una aplicación de viajes compartidos) enfocándonos en los viajes interurbanos donde los precios pueden subir hasta 200$. Desarrollamos un sistema que permite reservar un asiento en un autobús, avión o un coche individual y proporcionar cuál es la mejor opción económica"
+        },
+        "aether": {
+            "title": "Desarrollador FullStack en Aether Solutions",
+            "time": "Noviembre 2022 - Septiembre 2023",
+            "description": "Mis responsabilidades eran ayudar en cualquier proyecto nuevo o en curso en múltiples áreas. La metodología de trabajo se basaba en equipos y participé en 3 grupos y proyectos diferentes. Utilizamos tecnologías como Angular, Tailwind o Firebase y herramientas como Trello y repositorios basados en Git para la organización."
+        },
+        "self": {
+            "title": "Autoaprendizaje",
+            "time": "Septiembre 2022",
+            "description": "Mi enfoque fue aprender las bases del desarrollo web y el diseño. Aprendí HTML, CSS, JavaScript, React y Tailwind. También aprendí cómo integrar el frontend con el backend usando Express y MongoDB."
+        }
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Aquí hay algunos de los proyectos en los que he trabajado recientemente. Ten en cuenta que algunos proyectos no son públicos por razones de seguridad de la empresa. ¡Siempre estoy trabajando en algo nuevo, así que vuelve pronto para ver actualizaciones!",
+    "rowsPerPage": "Filas por página",
+    "tooltips": {
+        "private": "Este es un repositorio privado",
+        "featured": "¡Este es uno de mis mejores proyectos!"
+    },
+    "items": {
+        "andar": {
+            "description": "Desarrollé una landing page para una empresa que ofrece oportunidades de inversión en el mercado inmobiliario.",
+            "date": "Noviembre 2023 - Enero 2024"
+        },
+        "chat": {
+            "description": "Aproveché Express y Socket.io para crear un sistema de chat encriptado en tiempo real utilizando web sockets que pueden enviar texto e imágenes. El almacenamiento de datos de las salas es manejado por Redis",
+            "date": "Septiembre 2023 - Octubre 2023"
+        },
+        "metro": {
+            "description": "Una herramienta de visualización de grafos para que los estudiantes planifiquen sus carreras. Puede consultar múltiples carreras a la vez y mostrar las materias que se comparten entre ellas.",
+            "date": ""
+        },
+        "chatgpt": {
+            "description": "Integré la API de ChatGPT en un sistema de chat basado en web, utilizando React, Tailwind y Firebase como backend.",
+            "date": "Abril 2023 - Mayo 2023"
+        },
+        "ticket": {
+            "description": "Encargado de desarrollar el módulo de preguntas frecuentes. Gestionando la creación, edición y presentación general de artículos.",
+            "date": "Septiembre 2022 - Abril 2023"
+        },
+        "erp": {
+            "description": "Encargado de refactorizar varias vistas y mantener módulos separados dentro de todo el ecosistema.",
+            "date": "Mayo 2023 - Agosto 2023"
+        },
+        "wova": {
+            "description": "Diseñé y desarrollé una landing page para una empresa de arquitectura moderna.",
+            "date": "Abril 2023 - Julio 2023"
+        },
+        "psico": {
+            "description": "Desarrollado junto a un equipo de 5 personas, una aplicación para que médicos y pacientes se comuniquen y programen citas. La aplicación maneja inicio de sesión, registro, gestión de perfiles, citas, filtrado y más. ¡Incluso tiene un sistema de chat con actualizaciones en tiempo real!",
+            "date": ""
+        }
+    }
+  }
+}

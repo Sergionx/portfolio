@@ -1,68 +1,17 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { HeroUIProvider, Spinner } from "@heroui/react";
+import { HeroUIProvider } from "@heroui/react";
 import {
   createRouter,
-  createRootRoute,
-  createRoute,
   RouterProvider,
-  redirect,
 } from "@tanstack/react-router";
-import MainLayout from "./layouts/MainLayout.tsx";
+import "./i18n";
 
-const App = lazy(() => import("./App.tsx"));
+// Import the generated route tree
+import { routeTree } from "./routeTree.gen";
 
-const rootRoute = createRootRoute({
-  component: MainLayout,
-});
-
-const portfolioRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "portfolio",
-  component: () => (
-    <Suspense
-      fallback={
-        <Spinner
-          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          classNames={{
-            wrapper: "w-[40vw] h-[40vw] max-w-[200px] max-h-[200px]",
-          }}
-        />
-      }
-    >
-      <App />
-    </Suspense>
-  ),
-});
-
-const indexRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/",
-  loader: () => {
-    throw redirect({
-      to: "/portfolio",
-    });
-  },
-});
-
-const catchAllRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "$",
-  loader: () => {
-    throw redirect({
-      to: "/portfolio",
-    });
-  },
-});
-
-const routeTree = rootRoute.addChildren([
-  indexRoute,
-  portfolioRoute,
-  catchAllRoute,
-]);
-
-const router = createRouter({ routeTree });
+const router = createRouter({ routeTree, basepath: "/portfolio" });
 
 declare module "@tanstack/react-router" {
   interface Register {
