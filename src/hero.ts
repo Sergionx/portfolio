@@ -13,6 +13,8 @@ export default heroui({
       colors: {
         primary: primaryColor_Light,
         secondary: secondaryColor_Light,
+        background: "#F9F9FD",
+
         tertiary: tertiaryColor_Light,
       } as any,
     },
@@ -20,7 +22,9 @@ export default heroui({
       colors: {
         primary: primaryColor_Dark,
         secondary: secondaryColor_Dark,
-        tertiary: tertiaryColor_Light,
+        background: "#1E1E1E",
+
+        // tertiary: tertiaryColor_Light,
       } as any,
     },
   },

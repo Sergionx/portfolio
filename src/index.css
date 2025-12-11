@@ -9,8 +9,12 @@ layer(base);
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-normal-white: #F9F9FD;
-  --color-normal-black: #1E1E1E;
+ --color-primary: hsl(var(--heroui-primary));
+  --color-secondary: hsl(var(--heroui-secondary));
+  --color-tertiary:  hsl(var(--heroui-tertiary));
+
+  --color-white: #F9F9FD;
+  --color-black: #1E1E1E;
   
   --font-inter: "Inter", sans-serif;
   
@@ -53,16 +57,16 @@ layer(base);
 }
 
 @utility glass {
-  @apply bg-normal-white/60 dark:bg-normal-white/20 
+  @apply bg-white/60 dark:bg-white/20 
       border-2 border-[#d8d8d8] dark:border-white/20 backdrop-blur-xs;
 }
 
 @utility glass-sm {
-  @apply glass bg-normal-white/60 dark:bg-normal-white/20;
+  @apply glass bg-white/60 dark:bg-white/20;
 }
 
 @utility glass-lg {
-  @apply glass bg-normal-white/70  hover:bg-normal-white/30 backdrop-blur-lg;
+  @apply glass bg-white/70  hover:bg-white/30 backdrop-blur-lg;
 }
 
 @utility bg-clip-padding-border {

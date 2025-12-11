@@ -47,7 +47,7 @@ export default function SideMenu() {
       <li
         key={index}
         className={cn(
-          "relative text-2xl font-bold w-full text-normal-black dark:text-normal-white hover:text-primary-400 transition-all duration-300 ease-in-out opacity-75 hover:opacity-100 hover:scale-110",
+          "relative text-2xl font-bold w-full text-foreground hover:text-primary-400 transition-all duration-300 ease-in-out opacity-75 hover:opacity-100 hover:scale-110",
           {
             // Active State
             "text-gradient-color scale-125 opacity-100 hover:scale-125":
@@ -86,7 +86,7 @@ export default function SideMenu() {
       <button
         aria-label="Menu"
         className="fixed left-4 top-4 rounded-lg md:hidden z-1000 p-1 
-          text-normal-black dark:text-normal-white menu-button"
+          text-foreground menu-button"
         onClick={() => {
           setIsMenuOpen(!isMenuOpen);
         }}

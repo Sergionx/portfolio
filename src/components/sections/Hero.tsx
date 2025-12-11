@@ -61,7 +61,7 @@ export default function Hero() {
 
         <a
           className="sm:ml-auto cursor-pointer bg-primary-400 dark:bg-primary-700 rounded-lg
-            text-normal-white font-medium 
+            text-white font-medium 
             flex items-center gap-2 h-12 p-4"
           href="https://drive.google.com/file/d/1cGySz_gzeF8RiSZucsZBeec2lcLmWfTv/view?usp=drive_link"
           target="_blank"
