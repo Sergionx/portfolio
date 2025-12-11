@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearch } from "@tanstack/react-router";
+import { useMemo } from "react";
 
 interface Props<T> {
   data: T[];
@@ -10,19 +10,11 @@ export default function usePagination<T>({
   data,
   defaultRowsPerPage = 5,
 }: Props<T>) {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const search: any = useSearch({ strict: false });
 
-  const [rowsPerPage, setRowsPerPage] = useState(
-    Number(searchParams.get("rowsPerPage")) || defaultRowsPerPage
-  );
-  const [page, setPage] = useState(Number(searchParams.get("page")) || 1);
-
-  useEffect(() => {
-    const currentSearchParams = new URLSearchParams(searchParams);
-    currentSearchParams.set("page", page.toString());
-    currentSearchParams.set("rowsPerPage", rowsPerPage.toString());
-    setSearchParams(currentSearchParams);
-  }, [page, rowsPerPage, setSearchParams, searchParams]);
+  const page = Number(search.page) || 1;
+  const rowsPerPage = Number(search.rowsPerPage) || defaultRowsPerPage;
 
   const items = useMemo(() => {
     const start = (page - 1) * rowsPerPage;
@@ -33,9 +25,18 @@ export default function usePagination<T>({
 
   const pages = Math.ceil(data.length / rowsPerPage);
 
-  function handleSetRowsPerPage(page: number) {
-    setRowsPerPage(page);
-    setPage(1);
+  function setPage(newPage: number) {
+    navigate({
+      search: (prev: any) => ({ ...prev, page: newPage }),
+      replace: true,
+    } as any);
+  }
+
+  function handleSetRowsPerPage(newRowsPerPage: number) {
+    navigate({
+      search: (prev: any) => ({ ...prev, rowsPerPage: newRowsPerPage, page: 1 }),
+      replace: true,
+    } as any);
   }
 
   return {
