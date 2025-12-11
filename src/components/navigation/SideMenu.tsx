@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+
 import Header from "./Header";
-import "./SideMenu.css";
-import { cn } from "../../utils/classnames";
+
+import { cn } from "@/utils/classnames";
 
 export default function SideMenu() {
   const [activeLink, setActiveLink] = useState(5);
@@ -36,28 +36,48 @@ export default function SideMenu() {
   ];
 
   // REVIEW - Hover gradient
-  const anchorLinks = links.map((link, index) => (
-    <li
-      className={cn("link", {
-        active: activeLink === index,
-        open: isMenuOpen,
-        closed: !isMenuOpen,
-      })}
-      key={index}
-    >
-      <Link
-        spy={true}
-        to={link.name}
-        activeClass="active"
-        onSetActive={() => setActiveLink(index)}
-        offset={link.offset}
-        onClick={() => setIsMenuOpen(false)}
-        className="cursor-pointer"
+  const anchorLinks = links.map((link, index) => {
+    const isActive = activeLink === index;
+
+    // Styles for the decorative line (pseudo-element)
+    const lineStyles =
+      "after:absolute after:bg-secondary-400 after:top-1/2 after:right-0 after:content-[''] after:transition-all after:duration-300 after:translate-x-[220px] after:-translate-y-1/2 after:h-[3px] after:w-[200px]";
+
+    return (
+      <li
+        key={index}
+        className={cn(
+          "relative text-2xl font-bold w-full text-normal-black dark:text-normal-white hover:text-primary-400 transition-all duration-300 ease-in-out opacity-75 hover:opacity-100 hover:scale-110",
+          {
+            // Active State
+            "text-gradient-color scale-125 opacity-100 hover:scale-125":
+              isActive,
+
+            // Desktop/Closed Menu positioning
+            "-translate-x-10 hover:-translate-x-12.5": !isMenuOpen && !isActive,
+            "-translate-x-25": !isMenuOpen && isActive,
+
+            // Decorative Line Logic
+            [lineStyles]: !isMenuOpen, // Apply line styles only when menu is closed
+            "after:bg-linear-to-r after:from-primary-500 after:to-primary-600":
+              !isMenuOpen && isActive,
+          }
+        )}
       >
-        {link.name}
-      </Link>
-    </li>
-  ));
+        <Link
+          spy={true}
+          to={link.name}
+          activeClass="active"
+          onSetActive={() => setActiveLink(index)}
+          offset={link.offset}
+          onClick={() => setIsMenuOpen(false)}
+          className="cursor-pointer"
+        >
+          {link.name}
+        </Link>
+      </li>
+    );
+  });
 
   return (
     <nav className="">
@@ -65,7 +85,7 @@ export default function SideMenu() {
 
       <button
         aria-label="Menu"
-        className="fixed left-4 top-4 rounded-lg md:hidden z-[1000] p-1 
+        className="fixed left-4 top-4 rounded-lg md:hidden z-1000 p-1 
           text-normal-black dark:text-normal-white menu-button"
         onClick={() => {
           setIsMenuOpen(!isMenuOpen);
@@ -82,7 +102,17 @@ export default function SideMenu() {
         />
       </button>
 
-      <ul className={`menu ${isMenuOpen ? "open" : "closed"}`}>
+      <ul
+        className={cn(
+          "fixed flex flex-col gap-6 items-center z-999 transition-opacity duration-500 ease-in-out opacity-0 md:opacity-100 w-screen right-0 md:w-auto",
+          {
+            "h-screen backdrop-blur-xl opacity-100 justify-center text-center":
+              isMenuOpen,
+            "md:right-5 top-1/2 -translate-y-1/2 max-md:invisible text-right":
+              !isMenuOpen,
+          }
+        )}
+      >
         {anchorLinks}
       </ul>
     </nav>

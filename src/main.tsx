@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { NextUIProvider, Spinner } from "@nextui-org/react";
+import { HeroUIProvider, Spinner } from "@heroui/react";
 import {
   createBrowserRouter,
   Navigate,
@@ -43,8 +43,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <NextUIProvider>
+    <HeroUIProvider>
       <RouterProvider router={router} />
-    </NextUIProvider>
+    </HeroUIProvider>
   </React.StrictMode>
 );

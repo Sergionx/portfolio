@@ -1,4 +1,4 @@
-import { ColorScale } from "@nextui-org/react";
+import { ColorScale } from "@heroui/react";
 
 type customColorScale = ColorScale & {
   950?: string;
@@ -48,6 +48,8 @@ export const tertiaryColor_Light = {
   800: "#1f39ae",
   900: "#20368d",
   950: "#182253",
+  DEFAULT: "#3d77f4",
+  foreground: "#ffffff",
 };
 
 export const primaryColor_Dark: customColorScale = {

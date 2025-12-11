@@ -1,4 +1,4 @@
-import { Pagination, Select, SelectItem } from "@nextui-org/react";
+import { Pagination, Select, SelectItem } from "@heroui/react";
 import { ProjectCard } from "../Project-Card/Project-Card";
 import { projects } from "../../data/projects";
 import usePagination from "../../hooks/usePagination";
@@ -37,7 +37,7 @@ export default function Projects() {
 
       {/* REVIEW - Considrar refactorizar esto y usar bento */}
       <div
-        className="flex flex-wrap gap-6 justify-center mt-6 max-w-[140rem]
+        className="flex flex-wrap gap-6 justify-center mt-6 max-w-560
         px-1 xl:px-8"
       >
         {projectsCard}

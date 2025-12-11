@@ -26,7 +26,7 @@ export default function Hero() {
       <footer
         className="flex flex-col sm:flex-row items-center 
           max-sm:w-fit max-w-[500px] mx-auto 
-          rounded-xl p-2 gap-4 mt-8 shadow-sm 
+          rounded-xl p-2 gap-4 mt-8 shadow-xs 
           glass-sm hover:glass-lg"
       >
         <a

@@ -3,7 +3,6 @@ import { BiLinkExternal } from "react-icons/bi";
 import { BsFillBuildingFill, BsStar } from "react-icons/bs";
 import { Tooltip } from "react-tooltip";
 import { cn } from "../../utils/classnames";
-import "./Project-Card.css";
 
 export interface Project {
   name: string;
@@ -51,8 +50,8 @@ export function ProjectCard({
       hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
         max-w-md w-full p-4 rounded-md shadow-md relative flex flex-col`,
           project.featured
-            ? "card-featured"
-            : ` bg-gradient-to-tl from-tertiary-300 to-tertiary-100 
+            ? "border-[5px] border-transparent bg-origin-border bg-clip-[padding-box,border-box] bg-[linear-gradient(to_top_left,var(--color-tertiary-300),var(--color-tertiary-100)),linear-gradient(to_right,var(--color-secondary-500),var(--color-primary-600))] dark:bg-[linear-gradient(to_top_left,var(--color-tertiary-800),var(--color-tertiary-600)),linear-gradient(to_right,var(--color-secondary-500),var(--color-primary-600))]"
+            : ` bg-linear-to-tl from-tertiary-300 to-tertiary-100 
         dark:from-tertiary-800 dark:to-tertiary-600 `
         )}
       >
@@ -65,7 +64,7 @@ export function ProjectCard({
         </time>
 
         <p
-          className="font-medium my-4 break-words line-clamp-3 selection:gradient 
+          className="font-medium my-4 wrap-break-word line-clamp-3 selection:gradient 
         selection:bg-primary-400 dark:selection:bg-primary-700"
         >
           {project.description}
@@ -84,7 +83,7 @@ export function ProjectCard({
           <AiFillLock
             size={32}
             className={cn(
-              "active:animate-shake outline-none",
+              "active:animate-shake outline-hidden",
               project.githubUrl ? "hidden" : "block"
             )}
             aria-label="Private"
@@ -179,7 +178,7 @@ function StarIcon({ index }: { index: number }) {
         width="18"
         height="18"
         data-tooltip-id={"featured" + index}
-        className="fill-[url(#gradient)] dark:fill-[url(#gradient-dark)]  outline-none"
+        className="fill-[url(#gradient)] dark:fill-[url(#gradient-dark)]  outline-hidden"
         fill="currentColor"
         viewBox="0 0 16 16"
       >
