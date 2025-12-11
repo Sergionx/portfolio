@@ -69,6 +69,10 @@ layer(base);
   @apply glass bg-normal-white/70  hover:bg-normal-white/30 backdrop-blur-lg;
 }
 
+@utility bg-clip-padding-border {
+  background-clip: padding-box, border-box;
+}
+
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still

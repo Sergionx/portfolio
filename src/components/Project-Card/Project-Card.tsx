@@ -2,6 +2,7 @@ import { AiFillLock, AiFillGithub } from "react-icons/ai";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsFillBuildingFill } from "react-icons/bs";
 import { Tooltip } from "react-tooltip";
+
 import { cn } from "@/utils/classnames";
 
 export interface Project {
@@ -50,8 +51,9 @@ export function ProjectCard({
       hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
         max-w-md w-full p-4 rounded-md shadow-md relative flex flex-col`,
           project.featured
-            ? "border-[5px] border-transparent bg-origin-border bg-clip-[padding-box,border-box] bg-[linear-gradient(to_top_left,var(--color-tertiary-300),var(--color-tertiary-100)),linear-gradient(to_right,var(--color-secondary-500),var(--color-primary-600))] dark:bg-[linear-gradient(to_top_left,var(--color-tertiary-800),var(--color-tertiary-600)),linear-gradient(to_right,var(--color-secondary-500),var(--color-primary-600))]"
-            : ` bg-linear-to-tl from-tertiary-300 to-tertiary-100 
+            ? // eslint-disable-next-line
+              "border-[5px] border-transparent bg-origin-border bg-clip-padding-border bg-[linear-gradient(to_top_left,theme(colors.tertiary.300),theme(colors.tertiary.100)),linear-gradient(to_right,theme(colors.secondary.500),theme(colors.primary.600))] dark:bg-[linear-gradient(to_top_left,theme(colors.tertiary.800),theme(colors.tertiary.600)),linear-gradient(to_right,theme(colors.secondary.500),theme(colors.primary.600))]"
+            : `bg-linear-to-tl from-tertiary-300 to-tertiary-100 
         dark:from-tertiary-800 dark:to-tertiary-600 `
         )}
       >
