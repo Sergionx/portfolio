@@ -9,10 +9,6 @@ layer(base);
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-primary: var(--heroui-primary);
-  --color-secondary: var(--heroui-secondary);
-  --color-tertiary: var(--heroui-tertiary);
-
   --color-normal-white: #F9F9FD;
   --color-normal-black: #1E1E1E;
   
