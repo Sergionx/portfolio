@@ -53,8 +53,7 @@ export function ProjectCard({
       hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
         max-w-md w-full p-4 rounded-md shadow-md relative flex flex-col`,
           project.featured
-            ? // eslint-disable-next-line
-              "border-[5px] border-transparent bg-origin-border bg-clip-padding-border bg-[linear-gradient(to_top_left,hsl(var(--heroui-tertiary-300)),hsl(var(--heroui-tertiary-100))),linear-gradient(to_right,hsl(var(--heroui-secondary-500)),hsl(var(--heroui-primary-600)))] dark:bg-[linear-gradient(to_top_left,var(--color-tertiary-800),var(--color-tertiary-600)),linear-gradient(to_right,var(--color-secondary-500),var(--color-primary-600))]"
+            ? "border-[5px] border-transparent bg-origin-border bg-clip-padding-border bg-[linear-gradient(to_top_left,hsl(var(--heroui-tertiary-300)),hsl(var(--heroui-tertiary-100))),linear-gradient(to_right,hsl(var(--heroui-secondary-500)),hsl(var(--heroui-primary-600)))] dark:bg-[linear-gradient(to_top_left,hsl(var(--heroui-tertiary-800)),hsl(var(--heroui-tertiary-600))),linear-gradient(to_right,hsl(var(--heroui-secondary-500)),hsl(var(--heroui-primary-600)))]"
             : `bg-linear-to-tl from-tertiary-300 to-tertiary-100 
         dark:from-tertiary-800 dark:to-tertiary-600 `
         )}
@@ -63,9 +62,7 @@ export function ProjectCard({
 
         <TitleLink project={project} numberIcons={numberIcons} />
 
-        <time className="text-foreground/80 mt-2">
-          {t(project.date)}
-        </time>
+        <time className="text-foreground/80 mt-2">{t(project.date)}</time>
 
         <p
           className="font-medium my-4 wrap-break-word line-clamp-3 selection:gradient 
