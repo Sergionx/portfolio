@@ -1,9 +1,6 @@
 import { createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
-import "./index.css";
-import "./i18n";
-
 export function getRouter() {
   const router = createRouter({ routeTree, scrollRestoration: true });
 

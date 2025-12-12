@@ -4,6 +4,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import { HeroUIProvider } from "@heroui/react";
 
 import i18n from "@/i18n";
+import "@/index.css";
 
 import MainLayout from "@/layouts/MainLayout";
 
