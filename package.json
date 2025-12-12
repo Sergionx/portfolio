@@ -12,7 +12,10 @@
   },
   "dependencies": {
     "@heroui/react": "^2.8.5",
+    "@tanstack/devtools-vite": "^0.3.12",
+    "@tanstack/react-devtools": "^0.8.4",
     "@tanstack/react-router": "^1.141.0",
+    "@tanstack/react-router-devtools": "^1.141.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",
     "i18next": "^25.7.2",

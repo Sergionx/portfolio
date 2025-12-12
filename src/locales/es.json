@@ -92,5 +92,9 @@
             "date": ""
         }
     }
+  },
+  "meta": {
+    "title": "Portafolio de Sergio",
+    "description": "Desde 2020 comencé mi viaje como ingeniero de software, en el presente soy un desarrollador fullstack en el último año de mi carrera (Ingeniería de Sistemas)."
   }
 }

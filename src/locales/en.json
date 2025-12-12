@@ -92,5 +92,9 @@
             "date": ""
         }
     }
+  },
+  "meta": {
+    "title": "Sergio's Portfolio",
+    "description": "Since 2020 I began my journey as a software engineer, in the present I am a fullstack developer at the last year of my career (Systems Engineering)."
   }
 }
