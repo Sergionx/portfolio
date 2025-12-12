@@ -1,6 +1,19 @@
 #!/bin/bash
 set -e
 
+# Function to cleanup background processes
+cleanup() {
+  echo "Cleaning up..."
+  if [ -n "$SERVER_PID" ]; then
+    kill $SERVER_PID || true
+  fi
+  # Force kill any lingering vite processes
+  pkill -f "vite" || true
+}
+
+# Trap exit signals to ensure cleanup
+trap cleanup EXIT
+
 # Build the project
 echo "Building project..."
 npm run build
@@ -21,7 +34,3 @@ sleep 10
 # Generate OG Image
 echo "Generating OG Image..."
 node scripts/generate-og-image.mjs
-
-# Kill the server
-echo "Stopping preview server..."
-kill $SERVER_PID
