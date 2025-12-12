@@ -53,7 +53,7 @@ export default function SideMenu() {
           "text-2xl font-bold w-full text-foreground hover:text-primary-400 transition-all duration-300 ease-in-out opacity-75 hover:opacity-100 hover:scale-110",
           {
             // Active State
-            "text-gradient-color font-extrabold scale-125 opacity-100 hover:scale-125":
+            "text-gradient-color scale-125 opacity-100 hover:scale-125":
               isActive,
 
             // Desktop/Closed Menu positioning
