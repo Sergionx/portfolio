@@ -1,3 +1,0 @@
-[build]
-  command = "sh scripts/netlify-build.sh"
-  publish = "dist"

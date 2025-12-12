@@ -1,0 +1,46 @@
+name: Deploy OG Image to Github Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-og-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Setup Nodejs
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Install Dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Install Playwright Browsers
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      # Generate OG Image
+      - name: Generate OG Image
+        run: |
+          npm run dev -- --port 4173 --strictPort &
+          sleep 10
+          node scripts/generate-og-image.mjs
+          mkdir og-static
+          mv dist/og-home.png og-static/
+
+      # Deploy to github pages
+      - name: Deploy to github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: og-static
