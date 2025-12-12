@@ -25,6 +25,10 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      # Build the project
+      - name: Build project
+        run: npm run build
+
       # Install Playwright Browsers
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
@@ -32,7 +36,7 @@ jobs:
       # Generate OG Image
       - name: Generate OG Image
         run: |
-          npm run dev -- --port 4173 --strictPort &
+          npm run preview -- --port 4173 --strictPort &
           sleep 10
           node scripts/generate-og-image.mjs
           mkdir og-static
