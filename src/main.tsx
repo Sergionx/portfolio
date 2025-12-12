@@ -11,7 +11,7 @@ import "./i18n";
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 
-const router = createRouter({ routeTree, basepath: "/portfolio" });
+const router = createRouter({ routeTree });
 
 declare module "@tanstack/react-router" {
   interface Register {
