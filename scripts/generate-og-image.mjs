@@ -13,7 +13,7 @@ async function generateOgImage() {
   // Viewport size for Open Graph images
   await page.setViewportSize({ width: 1200, height: 630 });
 
-  const url = 'http://localhost:4173/portfolio/';
+  const url = 'http://localhost:4173/';
   console.log(`Navigating to ${url}...`);
   
   try {
