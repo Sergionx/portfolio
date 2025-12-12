@@ -5,6 +5,12 @@
     "spainFlag": "Bandera de España",
     "usaFlag": "Bandera de USA"
   },
+  "sidemenu": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "about": "Sobre Mí"
+  },
   "hero": {
     "greeting": "Hola, soy",
     "realNamePrefix": "Y mi nombre real es",

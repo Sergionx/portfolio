@@ -5,9 +5,12 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Header from "./Header";
 
 import { cn } from "@/utils/classnames";
+import { useTranslation } from "react-i18next";
 
 export default function SideMenu() {
-  const [activeLink, setActiveLink] = useState(5);
+  const { t } = useTranslation();
+
+  const [activeLink, setActiveLink] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -29,10 +32,10 @@ export default function SideMenu() {
   }, [isMenuOpen]);
 
   const links = [
-    { name: "Home", offset: 0 },
-    { name: "Projects", offset: 0 },
-    { name: "Experience", offset: 0 },
-    { name: "About", offset: -600 },
+    { name: t("sidemenu.home"), offset: 0 },
+    { name: t("sidemenu.projects"), offset: 0 },
+    { name: t("sidemenu.experience"), offset: 0 },
+    { name: t("sidemenu.about"), offset: -600 },
   ];
 
   // REVIEW - Hover gradient
@@ -47,10 +50,10 @@ export default function SideMenu() {
       <li
         key={index}
         className={cn(
-          "relative text-2xl font-bold w-full text-foreground hover:text-primary-400 transition-all duration-300 ease-in-out opacity-75 hover:opacity-100 hover:scale-110",
+          "text-2xl font-bold w-full text-foreground hover:text-primary-400 transition-all duration-300 ease-in-out opacity-75 hover:opacity-100 hover:scale-110",
           {
             // Active State
-            "text-gradient-color scale-125 opacity-100 hover:scale-125":
+            "text-gradient-color font-extrabold scale-125 opacity-100 hover:scale-125":
               isActive,
 
             // Desktop/Closed Menu positioning

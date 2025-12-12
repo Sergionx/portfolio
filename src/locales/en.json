@@ -5,6 +5,12 @@
     "spainFlag": "Spain flag",
     "usaFlag": "USA flag"
   },
+  "sidemenu": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "about": "About"
+  },
   "hero": {
     "greeting": "Hi, I'm",
     "realNamePrefix": "And my real name is",
