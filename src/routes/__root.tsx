@@ -1,7 +1,9 @@
-import { createRootRoute, HeadContent } from "@tanstack/react-router";
-import i18n from "@/i18n";
+import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
+import { HeroUIProvider } from "@heroui/react";
+
+import i18n from "@/i18n";
 
 import MainLayout from "@/layouts/MainLayout";
 
@@ -64,9 +66,17 @@ export const Route = createRootRoute({
     };
   },
   component: () => (
-    <>
-      <HeadContent />
-      <MainLayout />
+    <html>
+      <head>
+        <HeadContent />
+      </head>
+
+      <body>
+        <HeroUIProvider>
+          <MainLayout />
+        </HeroUIProvider>
+        <Scripts />
+      </body>
 
       <TanStackDevtools
         config={{ position: "bottom-right" }}
@@ -78,6 +88,6 @@ export const Route = createRootRoute({
           },
         ]}
       />
-    </>
+    </html>
   ),
 });
