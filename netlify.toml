@@ -1,3 +1,3 @@
 [build]
-  command = "npm run build && npx playwright install chromium && npm run preview -- --port 4173 --strictPort & sleep 10 && node scripts/generate-og-image.mjs"
+  command = "sh scripts/netlify-build.sh"
   publish = "dist"
