@@ -10,7 +10,7 @@ export default function About() {
       <p className="text-lg font-medium max-w-prose ">
         <Trans i18nKey="about.p1">
           Since 2020 I began my journey as a software engineer, in the present I
-          am a{" "}
+          am a
           <span className="font-bold text-gradient-color">
             fullstack developer
           </span>{" "}
@@ -32,8 +32,8 @@ export default function About() {
 
       <p className="text-lg font-medium  max-w-prose  mt-4 ">
         <Trans i18nKey="about.p3">
-          As a programmer, the 2 words that best defines me are{" "}
-          <span className="font-bold text-gradient-color">adaptation</span> and
+          As a programmer, the 2 words that best defines me are
+          <span className="font-bold text-gradient-color">adaptation</span>
           <span className="font-bold text-gradient-color"> curiosity</span>. My
           goal is to learn something new every day, and I am always looking for
           new challenges to improve my skills.

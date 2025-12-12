@@ -21,9 +21,9 @@
   },
   "about": {
     "title": "About Me",
-    "p1": "Since 2020 I began my journey as a software engineer, in the present I am a <1>fullstack developer</1> at the last year of my career (Systems Engineering).",
+    "p1": "Since 2020 I began my journey as a software engineer, in the present I am a <1> fullstack developer</1> at the last year of my career (Systems Engineering).",
     "p2": "The past year I delivered at my past company web applications using React and Angular, and backend services using Firebase. <1> Improving the workflow and the delivery time</1> of my team.",
-    "p3": "As a programmer, the 2 words that best defines me are <1>adaptation</1> and <3> curiosity</3>. My goal is to learn something new every day, and I am always looking for new challenges to improve my skills."
+    "p3": "As a programmer, the 2 words that best defines me are <1> adaptation</1> and <2> curiosity</2>. My goal is to learn something new every day, and I am always looking for new challenges to improve my skills."
   },
   "experience": {
     "title": "Experience",
