@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 
 import Header from "./Header";
 
 import { cn } from "@/utils/classnames";
-import { useTranslation } from "react-i18next";
 
 export default function SideMenu() {
   const { t } = useTranslation();
