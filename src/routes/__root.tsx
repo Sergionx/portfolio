@@ -6,7 +6,7 @@ import { HeroUIProvider } from "@heroui/react";
 import i18n from "@/i18n";
 import indexCss from "@/index.css?url";
 
-import MainLayout from "@/layouts/MainLayout";
+import SideMenu from "@/components/navigation/SideMenu";
 
 export const Route = createRootRoute({
   head: () => {
@@ -74,7 +74,7 @@ export const Route = createRootRoute({
       links: [{ rel: "stylesheet", href: indexCss }],
     };
   },
-  shellComponent: () => (
+  shellComponent: ({ children }) => (
     <html>
       <head>
         <HeadContent />
@@ -82,7 +82,7 @@ export const Route = createRootRoute({
 
       <body>
         <HeroUIProvider>
-          <MainLayout />
+          <MainLayout>{children}</MainLayout>
         </HeroUIProvider>
         <Scripts />
 
@@ -100,3 +100,20 @@ export const Route = createRootRoute({
     </html>
   ),
 });
+
+export default function MainLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <main
+      className="flex flex-col items-center min-h-[200vh] px-8 md:px-48 transition-colors duration-500
+      text-foreground bg-background"
+    >
+      <SideMenu />
+
+      {children}
+    </main>
+  );
+}
