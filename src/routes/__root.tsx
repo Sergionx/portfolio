@@ -11,7 +11,7 @@ import SideMenu from "@/components/navigation/SideMenu";
 export const Route = createRootRoute({
   head: () => {
     // const origin = typeof window !== "undefined" ? window.location.origin : "";
-    const url = typeof window !== "undefined" ? window.location.href : "";
+    const url = "https://sergionx.netlify.app/";
     const title = i18n.t("meta.title");
     const description = i18n.t("meta.description");
     const ogImage = "https://sergionx.github.io/portfolio/og-home.png";
