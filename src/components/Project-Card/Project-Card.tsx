@@ -3,8 +3,7 @@ import { BiLinkExternal } from "react-icons/bi";
 import { BsFillBuildingFill } from "react-icons/bs";
 import { Tooltip } from "react-tooltip";
 import { useTranslation } from "react-i18next";
-
-import { cn } from "@/utils/classnames";
+import { cn } from "@heroui/react";
 
 export interface Project {
   name: string;
