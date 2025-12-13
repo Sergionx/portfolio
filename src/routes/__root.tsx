@@ -4,7 +4,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import { HeroUIProvider } from "@heroui/react";
 
 import i18n from "@/i18n";
-import "@/index.css";
+import indexCss from "@/index.css?url";
 
 import MainLayout from "@/layouts/MainLayout";
 
@@ -64,6 +64,7 @@ export const Route = createRootRoute({
           content: url,
         },
       ],
+      links: [{ rel: "stylesheet", href: indexCss }],
     };
   },
   component: () => (
