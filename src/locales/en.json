@@ -28,69 +28,86 @@
   "experience": {
     "title": "Experience",
     "items": {
-        "jm": {
-            "title": "Frontend Engineer at JM Solutions",
-            "time": "April 2024 - Now",
-            "description": "My main responsibility is to maintain the integrity for the frontend while also providing a good performance of the app. The project consist on an ERP and I have delivered tasks such as reducing a 30% of API calls and creating custom filters to query data."
-        },
-        "yummy": {
-            "title": "Yummy Codicon",
-            "time": "August 2023",
-            "description": "Selected to compete at a 50 people hackathon to deliver a solution to an existent problem in a app. The teams were formed by 5 people and we had 24 hours to deliver a solution. Our team idea was to improve the user experience of Yummy Rides (a rideshare app) by focusing in the inter-urban travels where the prices can go up to 200$. We developed a system that allows to book a seat in a bus, plane or a individual car and provide which one is the best economic option"
-        },
-        "aether": {
-            "title": "FullStack Developer at Aether Solutions",
-            "time": "November 2022 - September 2023",
-            "description": "My responsabilities were to help any new or ongoing project in multiple areas. The work methodology was team based and I participated in 3 different groups and projects. We used technologies such as Angular, Tailwind, or Firebase and tools like Trello and Git based repository for organization."
-        },
-        "self": {
-            "title": "Self-learning",
-            "time": "September 2022",
-            "description": "My focus was to learn the bases of web development and design. I learned HTML, CSS, JavaScript, React, and Tailwind. I also learned how to integrate the frontend with the backend using Express and MongoDB."
-        }
-    }
+      "s7b codicon": {
+        "title": "S7B Codicon Finalist",
+        "time": "November 2025",
+        "description": "We were chosen to be one of the 5 finalists out of +30 teams to design an idea to improve Mobile Payment in Venezuela. My team and I worked hard on a solution to facilitate merchants' operations and later presented it to a jury specialized in fintech."
+      },
+      "icpc 2024": {
+        "title": "ICPC Venezuela 2025 Winning Team",
+        "time": "December 2024",
+        "description": "I was part of the winning team of ICPC Venezuela 2024, a university-level competitive programming competition. Working as a team, we solved several complex algorithmic problems under time pressure, demonstrating our skills in critical thinking, collaboration, and mastery of algorithms and data structures."
+      },
+      "flembee": {
+        "title": "FullStack Developer at Aether Solutions",
+        "time": "Agosto 2024 - Presente",
+        "description": "Responsible for the development of the frontend and backend of solutions such as Kudo or Yet. Using Nestjs, Nextjs, PostgreSQL, and Tailwind, I worked both independently and leading teams of 3 people.\nMy key contributions in backend development include implementing Rate Limiting, Attribute-Based Access Control using dynamic permissions, real-time notifications and communication using WebSockets and query optimization for dynamic dashboards.\nOn the frontend, I was responsible for designing a scalable architecture in Next.js using a feature-based structure to divide the dashboard into modules, along with authentication and data validation using Zod."
+      },
+      "jm": {
+        "title": "Frontend Engineer at JM Solutions",
+        "time": "April 2024 - August 2024",
+        "description": "My main responsibility is to maintain the integrity for the frontend while also providing a good performance of the app. The project consist on an ERP and I have delivered tasks such as reducing a 30% of API calls and creating custom filters to query data."
+      },
+      "yummy": {
+        "title": "Yummy Codicon",
+        "time": "August 2023",
+        "description": "Selected to compete at a 50 people hackathon to deliver a solution to an existent problem in a app. The teams were formed by 5 people and we had 24 hours to deliver a solution. Our team idea was to improve the user experience of Yummy Rides (a rideshare app) by focusing in the inter-urban travels where the prices can go up to 200$. We developed a system that allows to book a seat in a bus, plane or a individual car and provide which one is the best economic option"
+      },
+      "aether": {
+        "title": "FullStack Developer at Aether Solutions",
+        "time": "November 2022 - September 2023",
+        "description": "My responsabilities were to help any new or ongoing project in multiple areas. The work methodology was team based and I participated in 3 different groups and projects. We used technologies such as Angular, Tailwind, or Firebase and tools like Trello and Git based repository for organization."
+      },
+      "self": {
+        "title": "Self-learning",
+        "time": "September 2022",
+        "description": "My focus was to learn the bases of web development and design. I learned HTML, CSS, JavaScript, React, and Tailwind. I also learned how to integrate the frontend with the backend using Express and MongoDB."
+      }
+    },
+    "showMore": "See more",
+    "showLess": "See less"
   },
   "projects": {
     "title": "Projects",
     "description": "Here are some of the projects I've worked on recently. Keep In mind that some projects are not public for compoany security reasons. I'm always working on something new, so check back soon for updates!",
     "rowsPerPage": "Rows per page",
     "tooltips": {
-        "private": "This is a private repository",
-        "featured": "This is one of my best projects!"
+      "private": "This is a private repository",
+      "featured": "This is one of my best projects!"
     },
     "items": {
-        "andar": {
-            "description": "Developed a landing page for a company that offers investment opportunities in the real estate market.",
-            "date": "November 2023 - January 2024"
-        },
-        "chat": {
-            "description": "Leveraged Express and Socket.io to create a real time encrypted chat system using web sockets that can send text and images. The data storage of the rooms is handled by Redis",
-            "date": "September 2023 - October 2023"
-        },
-        "metro": {
-            "description": "A Graph visualization tool for students to plan their careers. It can query multiple careers at once and show the subjects that are shared between them.",
-            "date": ""
-        },
-        "chatgpt": {
-            "description": "Integrated ChatGPT API on a web based chat system, using React, Tailwind and Firebase as a backend.",
-            "date": "April 2023 - May 2023"
-        },
-        "ticket": {
-            "description": "Tasked with developing the FAQ module. Managing the creation, editing and overall presentation of articles.",
-            "date": "September 2022 - April 2023"
-        },
-        "erp": {
-            "description": "Tasked with refactoring several views and maintaining to separate modules within the whole ecosystem.",
-            "date": "May 2023 - August 2023"
-        },
-        "wova": {
-            "description": "Designed and developed a landing page for a modern architecture company.",
-            "date": "April 2023 - Jul 2023"
-        },
-        "psico": {
-            "description": "Developed alongside a team of 5 people an app for doctors and patients to communicate and schedule appointments. The app handles login, signup, profile management, appointments, filtering and more. It even has a chat system with real time updates!",
-            "date": ""
-        }
+      "andar": {
+        "description": "Developed a landing page for a company that offers investment opportunities in the real estate market.",
+        "date": "November 2023 - January 2024"
+      },
+      "chat": {
+        "description": "Leveraged Express and Socket.io to create a real time encrypted chat system using web sockets that can send text and images. The data storage of the rooms is handled by Redis",
+        "date": "September 2023 - October 2023"
+      },
+      "metro": {
+        "description": "A Graph visualization tool for students to plan their careers. It can query multiple careers at once and show the subjects that are shared between them.",
+        "date": ""
+      },
+      "chatgpt": {
+        "description": "Integrated ChatGPT API on a web based chat system, using React, Tailwind and Firebase as a backend.",
+        "date": "April 2023 - May 2023"
+      },
+      "ticket": {
+        "description": "Tasked with developing the FAQ module. Managing the creation, editing and overall presentation of articles.",
+        "date": "September 2022 - April 2023"
+      },
+      "erp": {
+        "description": "Tasked with refactoring several views and maintaining to separate modules within the whole ecosystem.",
+        "date": "May 2023 - August 2023"
+      },
+      "wova": {
+        "description": "Designed and developed a landing page for a modern architecture company.",
+        "date": "April 2023 - Jul 2023"
+      },
+      "psico": {
+        "description": "Developed alongside a team of 5 people an app for doctors and patients to communicate and schedule appointments. The app handles login, signup, profile management, appointments, filtering and more. It even has a chat system with real time updates!",
+        "date": ""
+      }
     }
   },
   "meta": {
