@@ -85,18 +85,18 @@ export const Route = createRootRoute({
           <MainLayout />
         </HeroUIProvider>
         <Scripts />
-      </body>
 
-      <TanStackDevtools
-        config={{ position: "bottom-right" }}
-        plugins={[
-          {
-            name: "TanStack Router",
-            render: <TanStackRouterDevtoolsPanel />,
-            defaultOpen: false,
-          },
-        ]}
-      />
+        <TanStackDevtools
+          config={{ position: "bottom-right" }}
+          plugins={[
+            {
+              name: "TanStack Router",
+              render: <TanStackRouterDevtoolsPanel />,
+              defaultOpen: false,
+            },
+          ]}
+        />
+      </body>
     </html>
   ),
 });
