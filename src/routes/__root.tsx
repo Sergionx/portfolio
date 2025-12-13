@@ -18,6 +18,13 @@ export const Route = createRootRoute({
 
     return {
       meta: [
+        {
+          charSet: "utf-8",
+        },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
         { title },
         {
           name: "description",
@@ -67,7 +74,7 @@ export const Route = createRootRoute({
       links: [{ rel: "stylesheet", href: indexCss }],
     };
   },
-  component: () => (
+  shellComponent: () => (
     <html>
       <head>
         <HeadContent />
