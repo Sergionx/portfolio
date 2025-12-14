@@ -87,7 +87,7 @@ export default function SideMenu() {
 
       <button
         aria-label="Menu"
-        className="fixed left-4 top-4 rounded-lg md:hidden z-1000 p-1 
+        className="fixed left-4 top-4 rounded-lg lg:hidden z-1000 p-1 
           text-foreground menu-button"
         onClick={() => {
           setIsMenuOpen(!isMenuOpen);
@@ -106,11 +106,11 @@ export default function SideMenu() {
 
       <ul
         className={cn(
-          "fixed flex flex-col gap-6 items-center z-999 transition-opacity duration-500 ease-in-out opacity-0 md:opacity-100 w-screen right-0 md:w-auto",
+          "fixed flex flex-col gap-6 items-center z-999 transition-opacity duration-500 ease-in-out opacity-0 lg:opacity-100 w-screen right-0 lg:w-auto",
           {
             "h-screen backdrop-blur-xl opacity-100 justify-center text-center":
               isMenuOpen,
-            "md:right-5 top-1/2 -translate-y-1/2 max-md:invisible text-right":
+            "lg:right-5 top-1/2 -translate-y-1/2 max-lg:invisible text-right":
               !isMenuOpen,
           }
         )}
