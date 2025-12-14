@@ -2,8 +2,9 @@ import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { HeroUIProvider } from "@heroui/react";
+import { useTranslation } from "react-i18next";
 
-import i18n from "@/i18n";
+import i18n, { setSSRLanguage } from "@/i18n";
 import indexCss from "@/index.css?url";
 
 import SideMenu from "@/components/navigation/SideMenu";
@@ -74,8 +75,17 @@ export const Route = createRootRoute({
       links: [{ rel: "stylesheet", href: indexCss }],
     };
   },
-  shellComponent: ({ children }) => (
-    <html>
+  beforeLoad: async () => {
+    await setSSRLanguage();
+  },
+  shellComponent: RootDocument,
+});
+
+function RootDocument({ children }: { children: React.ReactNode }) {
+  const { i18n } = useTranslation();
+
+  return (
+    <html lang={i18n.language}>
       <head>
         <HeadContent />
       </head>
@@ -98,17 +108,13 @@ export const Route = createRootRoute({
         />
       </body>
     </html>
-  ),
-});
+  );
+}
 
-export default function MainLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <main
-      className="flex flex-col items-center min-h-[200vh] px-8 md:px-48 transition-colors duration-500
+      className="flex flex-col items-center min-h-[200vh] px-8 lg:px-50 transition-colors duration-500
       text-foreground bg-background"
     >
       <SideMenu />
