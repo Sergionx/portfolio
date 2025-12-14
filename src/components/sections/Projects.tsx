@@ -21,12 +21,10 @@ export default function Projects() {
       data: projects,
       defaultRowsPerPage: 5,
     });
-    
-  // TODO - Click lo abre con framer motion
+
   const projectsCard = items.map((project, index) => (
     <ProjectCard project={project} index={index} key={index} />
   ));
-
 
   return (
     <>
