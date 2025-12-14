@@ -1,9 +1,15 @@
+import { useMemo } from "react";
 import { AiFillLock, AiFillGithub } from "react-icons/ai";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsFillBuildingFill } from "react-icons/bs";
+import { AnimatePresence, motion } from "framer-motion";
 import { Tooltip } from "react-tooltip";
 import { useTranslation } from "react-i18next";
-import { cn } from "@heroui/react";
+import { Modal, cn } from "@heroui/react";
+import { ProjectModalContent } from "./Project-Modal";
+import { TechnologyList } from "./TechnologyList";
+
+import { useBoolean } from "@/hooks/shadcn.io/use-boolean";
 
 export interface Project {
   name: string;
@@ -26,6 +32,14 @@ export function ProjectCard({
   const numberIcons =
     (Number(!project.githubUrl) || 0) + (Number(project.featured) || 0);
 
+  const motionId = useMemo(() => `project-card-${index}`, [index]);
+
+  const {
+    value: isOpen,
+    setTrue: openModal,
+    setValue: setIsOpen,
+  } = useBoolean();
+
   return (
     <div key={index}>
       <Tooltip
@@ -46,16 +60,20 @@ export function ProjectCard({
         />
       )}
 
-      <article
+      <motion.article
+        layoutId={motionId}
+        onClick={openModal}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.99 }}
         className={cn(
-          `transition-transform duration-300 ease-in-out h-full
-      hover:bg-blue-100 dark:hover:bg-blue-900/90 hover:scale-105 group
-        max-w-md w-full p-4 rounded-md shadow-md relative flex flex-col`,
+          `transition-transform duration-300 ease-in-out h-full cursor-pointer
+          max-w-md w-full p-4 rounded-md shadow-md relative flex flex-col`,
+          isOpen && "z-1",
           project.featured
             ? "border-[5px] border-transparent bg-origin-border bg-clip-padding-border bg-[linear-gradient(to_top_left,hsl(var(--heroui-tertiary-300)),hsl(var(--heroui-tertiary-100))),linear-gradient(to_right,hsl(var(--heroui-secondary-500)),hsl(var(--heroui-primary-600)))] dark:bg-[linear-gradient(to_top_left,hsl(var(--heroui-tertiary-800)),hsl(var(--heroui-tertiary-600))),linear-gradient(to_right,hsl(var(--heroui-secondary-500)),hsl(var(--heroui-primary-600)))]"
-            : `bg-linear-to-tl from-tertiary-300 to-tertiary-100 
-        dark:from-tertiary-800 dark:to-tertiary-600 `
+            : "bg-linear-to-tl from-tertiary-300 to-tertiary-100 dark:from-tertiary-800 dark:to-tertiary-600"
         )}
+        // transition={{ z: 10000, zIndex: 10000 }}
       >
         <CornerIcons project={project} index={index} />
 
@@ -70,7 +88,7 @@ export function ProjectCard({
           {t(project.description)}
         </p>
 
-        <TechonologyList technologies={project.technologies} />
+        <TechnologyList technologies={project.technologies} variant="card" />
 
         <a
           className="cursor-pointer hover:text-primary-400 dark:hover:text-primary-700 shrink-0
@@ -79,6 +97,7 @@ export function ProjectCard({
           target="_blank"
           rel="noreferrer"
           data-tooltip-id={!project.githubUrl ? "private" + index : ""}
+          onClick={(e) => e.stopPropagation()}
         >
           <AiFillLock
             size={32}
@@ -94,7 +113,43 @@ export function ProjectCard({
             aria-label={t("hero.github")}
           />
         </a>
-      </article>
+      </motion.article>
+
+      <AnimatePresence>
+        {isOpen && (
+          <Modal
+            isOpen={isOpen}
+            onOpenChange={setIsOpen}
+            size="3xl"
+            backdrop="blur"
+            placement="center"
+            classNames={{ wrapper: "max-sm:pr-4" }}
+            motionProps={{
+              variants: {
+                enter: {
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+
+                  transition: { duration: 0.25 },
+                },
+                exit: {
+                  opacity: 0,
+                  scale: 0.95,
+                  y: 8,
+                  transition: { duration: 0.2 },
+                },
+              },
+            }}
+          >
+            <ProjectModalContent
+              project={project}
+              index={index}
+              motionId={motionId}
+            />
+          </Modal>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -122,6 +177,8 @@ function TitleLink({
   project: Project;
   numberIcons: number;
 }) {
+  const { t } = useTranslation();
+
   return (
     <a
       className={cn(
@@ -131,10 +188,9 @@ function TitleLink({
       href={project.url}
       target="_blank"
       rel="noreferrer"
+      onClick={(e) => e.stopPropagation()}
     >
-      <span className="font-semibold group-hover:font-bold">
-        {project.name}
-      </span>{" "}
+      <span className="font-semibold text-balance max-w-52">{t(project.name, { defaultValue: project.name })}</span>{" "}
       <AiFillLock
         size={18}
         className={cn(
@@ -149,28 +205,9 @@ function TitleLink({
     </a>
   );
 }
-function TechonologyList({ technologies }: { technologies: string[] }) {
-  // TODO - Add ellipsis when the list is too long
-  return (
-    <ul
-      className="flex flex-wrap items-center gap-2 font-bold text-sm mt-auto pr-8
-      "
-      // overflow-hidden max-h-16
-    >
-      {technologies.map((technology, techIndex) => (
-        <li
-          className="bg-tertiary-300 text-tertiary-800 py-1 px-3 rounded-xl"
-          key={techIndex}
-        >
-          {technology}
-        </li>
-      ))}
-    </ul>
-  );
-}
 
 // TODO - Add sparkles on hover
-function StarIcon({ index }: { index: number }) {
+export function StarIcon({ index }: { index: number }) {
   return (
     <>
       <svg

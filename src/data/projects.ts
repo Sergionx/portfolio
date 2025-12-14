@@ -19,7 +19,25 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    name: "Chat Room System",
+    name: "projects.items.kudo.title",
+    description: "projects.items.kudo.description",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "NestJS",
+      "TypeORM",
+      "WebSockets",
+      "Firebase Cloud Messaging",
+      "QR",
+      "TailwindCSS",
+      "PostgreSQL",
+    ],
+    url: "https://play.google.com/store/apps/details?id=com.flembee.kudo",
+    date: "projects.items.kudo.date",
+    featured: true,
+  },
+  {
+    name: "projects.items.chat.title",
     description: "projects.items.chat.description",
     technologies: [
       "React",
@@ -33,6 +51,21 @@ export const projects: Project[] = [
     url: "https://chat-socket-frontend-indol.vercel.app/",
     githubUrl: "https://github.com/Sergionx/Chat-socket",
     date: "projects.items.chat.date",
+  },
+  {
+    name: "projects.items.yet.title",
+    description: "projects.items.yet.description",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "NestJS",
+      "PostgreSQL",
+      "TypeORM",
+      "React",
+      "TailwindCSS",
+    ],
+    date: "projects.items.yet.date",
+    featured: true,
   },
   {
     name: "Metro-Grama",
@@ -51,13 +84,13 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    name: "ChatGPT implementation",
+    name: "projects.items.chatgpt.title",
     description: "projects.items.chatgpt.description",
     technologies: ["React", "TypeScript", "TailwindCSS", "Firebase", "Vite"],
     date: "projects.items.chatgpt.date",
   },
   {
-    name: "Ticket Management System",
+    name: "projects.items.ticket.title",
     description: "projects.items.ticket.description",
     technologies: [
       "Angular",
@@ -71,7 +104,7 @@ export const projects: Project[] = [
     date: "projects.items.ticket.date",
   },
   {
-    name: "ERP System",
+    name: "projects.items.erp.title",
     description: "projects.items.erp.description",
     technologies: ["Angular", "TypeScript", "SASS", "Firebase", "RxJS"],
     date: "projects.items.erp.date",

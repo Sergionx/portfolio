@@ -76,29 +76,43 @@
       "featured": "This is one of my best projects!"
     },
     "items": {
+      "kudo": {
+        "title": "Kudo — Multi-merchant digital loyalty platform",
+        "description": "Multi-merchant digital loyalty platform. I contributed end-to-end: led backend architecture and built merchant dashboard. Implemented auth, real-time stamp claims via WebSockets, FCM push notifications, QR generation/validation, and TypeORM migrations. Dashboard is SSR Next.js with role-based UI, real-time updates, validated forms (react-hook-form + zod), and performant data tables.",
+        "date": "Oct 2024 - Present"
+      },
+      "yet": {
+        "title": "Yet — Corporate driver & passenger management platform",
+        "description": "Corporate driver & passenger management platform. As Technical Lead, owned data modeling, secure backend services, and a Next.js dashboard with ABAC. Implemented auth guards, modular services, migrations, interactive charts, and filterable tables for budget/travel insights.",
+        "date": "Mar 2025 - Nov 2025"
+      },
+      "chat": {
+        "title": "Chat Room System",
+        "description": "Leveraged Express and Socket.io to create a real time encrypted chat system using web sockets that can send text and images. The data storage of the rooms is handled by Redis",
+        "date": "September 2023 - October 2023"
+      },
+      "ticket": {
+        "title": "Ticket Management System",
+        "description": "Tasked with developing the FAQ module. Managing the creation, editing and overall presentation of articles.",
+        "date": "September 2022 - April 2023"
+      },
+      "chatgpt": {
+        "title": "ChatGPT implementation",
+        "description": "Integrated ChatGPT API on a web based chat system, using React, Tailwind and Firebase as a backend.",
+        "date": "April 2023 - May 2023"
+      },
+      "erp": {
+        "title": "ERP System",
+        "description": "Tasked with refactoring several views and maintaining to separate modules within the whole ecosystem.",
+        "date": "May 2023 - August 2023"
+      },
       "andar": {
         "description": "Developed a landing page for a company that offers investment opportunities in the real estate market.",
         "date": "November 2023 - January 2024"
       },
-      "chat": {
-        "description": "Leveraged Express and Socket.io to create a real time encrypted chat system using web sockets that can send text and images. The data storage of the rooms is handled by Redis",
-        "date": "September 2023 - October 2023"
-      },
       "metro": {
         "description": "A Graph visualization tool for students to plan their careers. It can query multiple careers at once and show the subjects that are shared between them.",
         "date": ""
-      },
-      "chatgpt": {
-        "description": "Integrated ChatGPT API on a web based chat system, using React, Tailwind and Firebase as a backend.",
-        "date": "April 2023 - May 2023"
-      },
-      "ticket": {
-        "description": "Tasked with developing the FAQ module. Managing the creation, editing and overall presentation of articles.",
-        "date": "September 2022 - April 2023"
-      },
-      "erp": {
-        "description": "Tasked with refactoring several views and maintaining to separate modules within the whole ecosystem.",
-        "date": "May 2023 - August 2023"
       },
       "wova": {
         "description": "Designed and developed a landing page for a modern architecture company.",

@@ -76,11 +76,22 @@
       "featured": "¡Este es uno de mis mejores proyectos!"
     },
     "items": {
+      "kudo": {
+        "title": "Kudo — Plataforma de fidelización multi‑comercio",
+        "description": "Plataforma de fidelización digital multi‑comercio. Contribuí de principio a fin: lideré la arquitectura de backend y construí el panel para comerciantes. Implementé autenticación/autorización, flujos de reclamo de sellos en tiempo real con WebSockets, notificaciones push vía FCM, generación/validación de QR y migraciones con TypeORM. El dashboard en Next.js (SSR) incluye UI basada en roles, actualizaciones en tiempo real, formularios validados (react-hook-form + zod) y tablas de datos performantes.",
+        "date": "Octubre 2024 - Presente"
+      },
+      "yet": {
+        "title": "Yet — Plataforma corporativa de gestión de conductores y pasajeros",
+        "description": "Plataforma corporativa de gestión de conductores y pasajeros. Como Líder Técnico, definí el modelado de datos y servicios seguros de backend y un dashboard en Next.js con ABAC. Implementé guards de autenticación, servicios modulares, migraciones, gráficos interactivos y tablas dinámicas (filtrables/ordenables) para mostrar insights de viajes y KPIs de presupuesto.",
+        "date": "Marzo 2025 - Noviembre 2025"
+      },
       "andar": {
         "description": "Desarrollé una landing page para una empresa que ofrece oportunidades de inversión en el mercado inmobiliario.",
         "date": "Noviembre 2023 - Enero 2024"
       },
       "chat": {
+        "title": "Sistema de salas de chat",
         "description": "Aproveché Express y Socket.io para crear un sistema de chat encriptado en tiempo real utilizando web sockets que pueden enviar texto e imágenes. El almacenamiento de datos de las salas es manejado por Redis",
         "date": "Septiembre 2023 - Octubre 2023"
       },
@@ -89,14 +100,17 @@
         "date": ""
       },
       "chatgpt": {
+        "title": "Implementación de ChatGPT",
         "description": "Integré la API de ChatGPT en un sistema de chat basado en web, utilizando React, Tailwind y Firebase como backend.",
         "date": "Abril 2023 - Mayo 2023"
       },
       "ticket": {
+        "title": "Sistema de gestión de tickets",
         "description": "Encargado de desarrollar el módulo de preguntas frecuentes. Gestionando la creación, edición y presentación general de artículos.",
         "date": "Septiembre 2022 - Abril 2023"
       },
       "erp": {
+        "title": "Sistema ERP",
         "description": "Encargado de refactorizar varias vistas y mantener módulos separados dentro de todo el ecosistema.",
         "date": "Mayo 2023 - Agosto 2023"
       },
