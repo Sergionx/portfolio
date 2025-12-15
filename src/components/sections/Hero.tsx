@@ -42,7 +42,7 @@ export default function Hero() {
 
         <a
           className="cursor-pointer hover:text-primary-400 dark:hover:text-primary-700"
-          href="https://www.linkedin.com/in/sergio-su%C3%A1rez-98266a201/"
+          href="linkedin.com/in/sergionx"
           target="_blank"
           rel="noreferrer"
         >
@@ -62,7 +62,7 @@ export default function Hero() {
           className="sm:ml-auto cursor-pointer bg-primary-400 dark:bg-primary-700 rounded-lg
             text-white font-medium 
             flex items-center gap-2 h-12 p-4"
-          href="https://drive.google.com/file/d/1cGySz_gzeF8RiSZucsZBeec2lcLmWfTv/view?usp=drive_link"
+          href={t("hero.resumeLink")}
           target="_blank"
           rel="noreferrer"
         >
