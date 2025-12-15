@@ -8,7 +8,9 @@ import { devtools } from "@tanstack/devtools-vite";
 import tailwindcss from "@tailwindcss/vite";
 import netlify from "@netlify/vite-plugin-tanstack-start";
 
-// https://vitejs.dev/config/
+import { generateSitemap } from "tanstack-router-sitemap";
+import { sitemap } from "./src/utils/sitemap";
+
 export default defineConfig({
   plugins: [
     tsconfigPaths(),
@@ -16,6 +18,7 @@ export default defineConfig({
     viteReact(),
     devtools(),
     netlify(),
+    generateSitemap(sitemap),
     tailwindcss(),
   ],
 });

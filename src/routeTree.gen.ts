@@ -9,15 +9,9 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SplatRouteImport } from './routes/$'
 import { Route as LocaleRouteRouteImport } from './routes/$locale/route'
 import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
 
-const SplatRoute = SplatRouteImport.update({
-  id: '/$',
-  path: '/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const LocaleRouteRoute = LocaleRouteRouteImport.update({
   id: '/$locale',
   path: '/$locale',
@@ -31,41 +25,30 @@ const LocaleIndexRoute = LocaleIndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/$locale': typeof LocaleRouteRouteWithChildren
-  '/$': typeof SplatRoute
   '/$locale/': typeof LocaleIndexRoute
 }
 export interface FileRoutesByTo {
-  '/$': typeof SplatRoute
   '/$locale': typeof LocaleIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/$locale': typeof LocaleRouteRouteWithChildren
-  '/$': typeof SplatRoute
   '/$locale/': typeof LocaleIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/$locale' | '/$' | '/$locale/'
+  fullPaths: '/$locale' | '/$locale/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/$' | '/$locale'
-  id: '__root__' | '/$locale' | '/$' | '/$locale/'
+  to: '/$locale'
+  id: '__root__' | '/$locale' | '/$locale/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   LocaleRouteRoute: typeof LocaleRouteRouteWithChildren
-  SplatRoute: typeof SplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/$': {
-      id: '/$'
-      path: '/$'
-      fullPath: '/$'
-      preLoaderRoute: typeof SplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/$locale': {
       id: '/$locale'
       path: '/$locale'
@@ -97,7 +80,6 @@ const LocaleRouteRouteWithChildren = LocaleRouteRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   LocaleRouteRoute: LocaleRouteRouteWithChildren,
-  SplatRoute: SplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
