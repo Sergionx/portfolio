@@ -5,14 +5,13 @@ import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import spainFlag from "@/assets/es.svg";
 import usaFlag from "@/assets/us.svg";
 
-
 import Switch from "../Switch";
 
 export default function Header() {
   const { t } = useTranslation();
   const { locale } = useParams({ from: "/$locale" });
   const navigate = useNavigate({ from: "/$locale" });
-  
+
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -55,8 +54,8 @@ export default function Header() {
 
       <div
         id="separator"
-        className="border border-tertiary-400 dark:border-tertiary-950 h-[25px] max-xs:hidden"
-      ></div>
+        className="border border-tertiary-400 dark:border-tertiary-950 h-6.25 max-xs:hidden"
+      />
 
       <section className="flex gap-2 items-center text-tertiary-800 dark:text-tertiary-300">
         <BsFillSunFill aria-label={t("header.sun")} size={24} />
