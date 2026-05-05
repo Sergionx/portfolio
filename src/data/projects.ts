@@ -2,23 +2,6 @@ import { Project } from "../components/Project-Card/Project-Card";
 
 export const projects: Project[] = [
   {
-    name: "ANDAR Investments",
-    description: "projects.items.andar.description",
-    technologies: [
-      "Next.js",
-      "React",
-      "Framer-Motion",
-      "TypeScript",
-      "TailwindCSS",
-      "Firebase",
-      "Shadcn",
-      "Vite",
-    ],
-    url: "https://andarinvestments.com/",
-    date: "projects.items.andar.date",
-    featured: true,
-  },
-  {
     name: "projects.items.kudo.title",
     description: "projects.items.kudo.description",
     technologies: [
@@ -36,22 +19,7 @@ export const projects: Project[] = [
     date: "projects.items.kudo.date",
     featured: true,
   },
-  {
-    name: "projects.items.chat.title",
-    description: "projects.items.chat.description",
-    technologies: [
-      "React",
-      "TypeScript",
-      "TailwindCSS",
-      "Express",
-      "Socket.io",
-      "Redis",
-      "Vite",
-    ],
-    url: "https://chat-socket-frontend-indol.vercel.app/",
-    githubUrl: "https://github.com/Sergionx/Chat-socket",
-    date: "projects.items.chat.date",
-  },
+
   {
     name: "projects.items.yet.title",
     description: "projects.items.yet.description",
@@ -68,6 +36,22 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    name: "ANDAR Investments",
+    description: "projects.items.andar.description",
+    technologies: [
+      "Next.js",
+      "React",
+      "Framer-Motion",
+      "TypeScript",
+      "TailwindCSS",
+      "Firebase",
+      "Shadcn",
+      "Vite",
+    ],
+    url: "https://andarinvestments.com/",
+    date: "projects.items.andar.date",
+  },
+  {
     name: "Metro-Grama",
     description: "projects.items.metro.description",
     technologies: [
@@ -82,6 +66,22 @@ export const projects: Project[] = [
     url: "https://metrograma.tech/materias?careers=career%3Asistemas",
     githubUrl: "https://github.com/MetroTech-UNIMET/Metro-Grama",
     featured: true,
+  },
+  {
+    name: "projects.items.chat.title",
+    description: "projects.items.chat.description",
+    technologies: [
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Express",
+      "Socket.io",
+      "Redis",
+      "Vite",
+    ],
+    url: "https://chat-socket-frontend-indol.vercel.app/",
+    githubUrl: "https://github.com/Sergionx/Chat-socket",
+    date: "projects.items.chat.date",
   },
   {
     name: "projects.items.chatgpt.title",
@@ -116,13 +116,5 @@ export const projects: Project[] = [
     url: "https://wova-87e6e.web.app/",
     githubUrl: "https://github.com/ValeriaZampetti/wova-studio/tree/main",
     date: "projects.items.wova.date",
-  },
-  {
-    name: "Psico Vivir",
-    description: "projects.items.psico.description",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Firebase", "Vite"],
-    url: "https://psico-vivir.web.app/",
-    githubUrl: "https://github.com/ValeriaZampetti/Psico-vivir",
-    date: "projects.items.psico.date",
   },
 ];

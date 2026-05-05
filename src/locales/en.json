@@ -112,16 +112,13 @@
         "date": "November 2023 - January 2024"
       },
       "metro": {
-        "description": "A Graph visualization tool for students to plan their careers. It can query multiple careers at once and show the subjects that are shared between them.",
-        "date": ""
+        "title": "Metro-Grama — Graph-based academic planning platform",
+        "description": "Interactive platform for visualizing and planning academic career paths. Designed a modular monolith backend in Go (Echo) using SurrealDB as a multi-model database to efficiently manage complex prerequisite graphs. Developed the frontend in React using a feature-based architecture, implementing file-based routing (TanStack Router), server-state management (TanStack Query), and strict schema validation with Zod. The system integrates a recommendation engine based on Volunteered Geographic Information (VGI) principles and bidirectional WebSocket communication for real-time academic and social alerts.",
+        "date": "December 2025 - April 2026"
       },
       "wova": {
         "description": "Designed and developed a landing page for a modern architecture company.",
         "date": "April 2023 - Jul 2023"
-      },
-      "psico": {
-        "description": "Developed alongside a team of 5 people an app for doctors and patients to communicate and schedule appointments. The app handles login, signup, profile management, appointments, filtering and more. It even has a chat system with real time updates!",
-        "date": ""
       }
     }
   },

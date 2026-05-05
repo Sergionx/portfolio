@@ -97,8 +97,9 @@
         "date": "Septiembre 2023 - Octubre 2023"
       },
       "metro": {
-        "description": "Una herramienta de visualización de grafos para que los estudiantes planifiquen sus carreras. Puede consultar múltiples carreras a la vez y mostrar las materias que se comparten entre ellas.",
-        "date": ""
+        "title": "Metro-Grama — Plataforma de planificación académica basada en grafos",
+        "description": "Plataforma interactiva para la visualización y planificación de trayectorias académicas universitarias. Diseñé una arquitectura de monolito modular en Go (Echo) utilizando SurrealDB como base de datos multimodelo para gestionar grafos de prerrequisitos complejos de forma eficiente. Desarrollé el frontend en React bajo una arquitectura orientada a características, implementando enrutamiento basado en archivos (TanStack Router), gestión de estado asíncrono (TanStack Query) y validación estricta de esquemas con Zod. El sistema integra un motor de recomendación basado en datos colaborativos (VGI) y comunicación bidireccional vía WebSockets para alertas académicas y sociales en tiempo real.",
+        "date": "Diciembre 2025 - Abril 2026"
       },
       "chatgpt": {
         "title": "Implementación de ChatGPT",
@@ -118,10 +119,6 @@
       "wova": {
         "description": "Diseñé y desarrollé una landing page para una empresa de arquitectura moderna.",
         "date": "Abril 2023 - Julio 2023"
-      },
-      "psico": {
-        "description": "Desarrollado junto a un equipo de 5 personas, una aplicación para que médicos y pacientes se comuniquen y programen citas. La aplicación maneja inicio de sesión, registro, gestión de perfiles, citas, filtrado y más. ¡Incluso tiene un sistema de chat con actualizaciones en tiempo real!",
-        "date": ""
       }
     }
   },
